@@ -50,14 +50,17 @@ public class cobrar extends javax.swing.JFrame {
         btn_tarjetas = new javax.swing.JButton();
         btn_efectivo = new javax.swing.JButton();
         img_pnls = new javax.swing.JLabel();
-        pnl_tarjetas = new javax.swing.JPanel();
-        txt_fecha_exp = new javax.swing.JTextField();
-        img_tarjetas = new javax.swing.JLabel();
         pnl_efectivo = new javax.swing.JPanel();
         txt_total = new javax.swing.JTextField();
         txt_recibido = new javax.swing.JTextField();
         txt_cambio = new javax.swing.JTextField();
         img_efectivo = new javax.swing.JLabel();
+        pnl_tarjetas = new javax.swing.JPanel();
+        txt_num_tarjeta = new javax.swing.JTextField();
+        txt_total_tarjetas = new javax.swing.JTextField();
+        box_mes = new javax.swing.JComboBox<>();
+        box_año = new javax.swing.JComboBox<>();
+        jLabel1 = new javax.swing.JLabel();
         img_fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -153,44 +156,10 @@ public class cobrar extends javax.swing.JFrame {
                 btn_efectivo(evt);
             }
         });
-        pnl_agregar.add(btn_efectivo, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 100, -1, -1));
+        pnl_agregar.add(btn_efectivo, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 100, -1, -1));
 
         img_pnls.setIcon(new javax.swing.ImageIcon(getClass().getResource("/design/img_pnls.png"))); // NOI18N
         pnl_agregar.add(img_pnls, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 290, 320));
-
-        pnl_tarjetas.setBackground(new java.awt.Color(83, 53, 74));
-
-        txt_fecha_exp.setEditable(false);
-        txt_fecha_exp.setBackground(new java.awt.Color(255, 255, 255));
-        txt_fecha_exp.setFont(new java.awt.Font("Montserrat SemiBold", 0, 12)); // NOI18N
-        txt_fecha_exp.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txt_fecha_exp.setToolTipText("");
-        txt_fecha_exp.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(30, 13, 45), 3));
-
-        img_tarjetas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/design/pnl_tarjetas.png"))); // NOI18N
-
-        javax.swing.GroupLayout pnl_tarjetasLayout = new javax.swing.GroupLayout(pnl_tarjetas);
-        pnl_tarjetas.setLayout(pnl_tarjetasLayout);
-        pnl_tarjetasLayout.setHorizontalGroup(
-            pnl_tarjetasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnl_tarjetasLayout.createSequentialGroup()
-                .addGap(61, 61, 61)
-                .addComponent(txt_fecha_exp, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(69, Short.MAX_VALUE))
-            .addGroup(pnl_tarjetasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(img_tarjetas, javax.swing.GroupLayout.DEFAULT_SIZE, 290, Short.MAX_VALUE))
-        );
-        pnl_tarjetasLayout.setVerticalGroup(
-            pnl_tarjetasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnl_tarjetasLayout.createSequentialGroup()
-                .addContainerGap(182, Short.MAX_VALUE)
-                .addComponent(txt_fecha_exp, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(119, 119, 119))
-            .addGroup(pnl_tarjetasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(img_tarjetas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        pnl_agregar.add(pnl_tarjetas, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 290, 320));
 
         pnl_efectivo.setBackground(new java.awt.Color(83, 53, 74));
 
@@ -220,21 +189,23 @@ public class cobrar extends javax.swing.JFrame {
         pnl_efectivoLayout.setHorizontalGroup(
             pnl_efectivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnl_efectivoLayout.createSequentialGroup()
-                .addGap(65, 65, 65)
+                .addGap(58, 58, 58)
                 .addGroup(pnl_efectivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(txt_total, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txt_recibido, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txt_cambio, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(65, Short.MAX_VALUE))
+                .addContainerGap(62, Short.MAX_VALUE))
             .addGroup(pnl_efectivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(img_efectivo, javax.swing.GroupLayout.DEFAULT_SIZE, 290, Short.MAX_VALUE))
+                .addGroup(pnl_efectivoLayout.createSequentialGroup()
+                    .addComponent(img_efectivo)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         pnl_efectivoLayout.setVerticalGroup(
             pnl_efectivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnl_efectivoLayout.createSequentialGroup()
-                .addContainerGap(117, Short.MAX_VALUE)
+                .addContainerGap(116, Short.MAX_VALUE)
                 .addComponent(txt_total, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(41, 41, 41)
+                .addGap(42, 42, 42)
                 .addComponent(txt_recibido, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(40, 40, 40)
                 .addComponent(txt_cambio, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -243,7 +214,39 @@ public class cobrar extends javax.swing.JFrame {
                 .addComponent(img_efectivo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        pnl_agregar.add(pnl_efectivo, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 290, 320));
+        pnl_agregar.add(pnl_efectivo, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 170, 280, 320));
+
+        pnl_tarjetas.setBackground(new java.awt.Color(83, 53, 74));
+        pnl_tarjetas.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        txt_num_tarjeta.setBackground(new java.awt.Color(255, 255, 255));
+        txt_num_tarjeta.setFont(new java.awt.Font("Montserrat SemiBold", 0, 12)); // NOI18N
+        txt_num_tarjeta.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt_num_tarjeta.setToolTipText("");
+        txt_num_tarjeta.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(30, 13, 45), 3));
+        pnl_tarjetas.add(txt_num_tarjeta, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 223, 30));
+
+        txt_total_tarjetas.setBackground(new java.awt.Color(255, 255, 255));
+        txt_total_tarjetas.setFont(new java.awt.Font("Montserrat SemiBold", 0, 12)); // NOI18N
+        txt_total_tarjetas.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt_total_tarjetas.setToolTipText("");
+        txt_total_tarjetas.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(30, 13, 45), 3));
+        pnl_tarjetas.add(txt_total_tarjetas, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 110, 160, 30));
+
+        box_mes.setEditable(true);
+        box_mes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "MES", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" }));
+        box_mes.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(30, 13, 45), 3));
+        pnl_tarjetas.add(box_mes, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, 100, 30));
+
+        box_año.setEditable(true);
+        box_año.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AÑO", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026", "2027", "2028", "2029", "2030", "2031", "2032", "2033", "2034", "2035", "2036", "2037", "2038", "2039", "2040", "2041", "2042", "2043", "2044", "2045", "2046", "2047", "2048", "2049", "2050" }));
+        box_año.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(30, 13, 45), 3));
+        pnl_tarjetas.add(box_año, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 270, 100, 30));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/design/pnl_tarjetas.png"))); // NOI18N
+        pnl_tarjetas.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 280, -1));
+
+        pnl_agregar.add(pnl_tarjetas, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 290, 320));
 
         img_fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/design/frame_cobrar.png"))); // NOI18N
         pnl_agregar.add(img_fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -323,6 +326,8 @@ public class cobrar extends javax.swing.JFrame {
   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> box_año;
+    private javax.swing.JComboBox<String> box_mes;
     private javax.swing.JButton btn_efectivo;
     private javax.swing.JButton btn_listo;
     private javax.swing.JButton btn_minimizar;
@@ -333,14 +338,15 @@ public class cobrar extends javax.swing.JFrame {
     private javax.swing.JLabel img_fondo;
     private javax.swing.JLabel img_letrero;
     private javax.swing.JLabel img_pnls;
-    private javax.swing.JLabel img_tarjetas;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel msj_comprobacion;
     private javax.swing.JPanel pnl_agregar;
     private javax.swing.JPanel pnl_efectivo;
     private javax.swing.JPanel pnl_tarjetas;
     private javax.swing.JTextField txt_cambio;
-    private javax.swing.JTextField txt_fecha_exp;
+    private javax.swing.JTextField txt_num_tarjeta;
     private javax.swing.JTextField txt_recibido;
     private javax.swing.JTextField txt_total;
+    private javax.swing.JTextField txt_total_tarjetas;
     // End of variables declaration//GEN-END:variables
 }
