@@ -284,9 +284,9 @@ public class cobrar extends javax.swing.JFrame {
            } 
         }catch(Exception e){
             System.out.println(e.toString());
-            msj_comprobacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/design/msj_recibido.png")));
+            msj_comprobacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/design/msj_datos_inex.png")));
+          
         }
-        
     }//GEN-LAST:event_btn_listo
 
    
@@ -309,7 +309,16 @@ public class cobrar extends javax.swing.JFrame {
     }
     
     public void realiza_cobro_tarjetas(){
+        String tarjeta_num=txt_num_tarjeta.getText();
+        int mes=box_mes.getSelectedIndex();
+        int año=box_año.getSelectedIndex();
         
+        if(txt_num_tarjeta.getText().equals("") || box_mes.getSelectedIndex()==0 || box_año.getSelectedIndex()==0){
+            msj_comprobacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/design/msj_datos_inex.png")));
+        }else
+        {
+         msj_comprobacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/design/msj_cargo.png"))); 
+        }
     }
     /**Metodo del boton salir, actividades:
      *-Cierra la ventana y termina el proceso de ejcución de la aplicación.

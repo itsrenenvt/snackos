@@ -80,6 +80,7 @@ public class ordenar extends javax.swing.JFrame {
         pnl_agregar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btn_listo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/design/listo.png"))); // NOI18N
+        btn_listo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(30, 12, 45), 3));
         btn_listo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btn_listo.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/design/listoblack.png"))); // NOI18N
         btn_listo.addActionListener(new java.awt.event.ActionListener() {
@@ -142,6 +143,7 @@ public class ordenar extends javax.swing.JFrame {
         pnl_agregar.add(txt_existencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 440, 160, 30));
 
         btn_salir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/design/exitapple.png"))); // NOI18N
+        btn_salir.setBorder(null);
         btn_salir.setContentAreaFilled(false);
         btn_salir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_salir.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/design/exitwo.png"))); // NOI18N
@@ -153,6 +155,7 @@ public class ordenar extends javax.swing.JFrame {
         pnl_agregar.add(btn_salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 0, 30, 30));
 
         btn_minimizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/design/minapple.png"))); // NOI18N
+        btn_minimizar.setBorder(null);
         btn_minimizar.setContentAreaFilled(false);
         btn_minimizar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_minimizar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/design/mintwo.png"))); // NOI18N
@@ -164,6 +167,7 @@ public class ordenar extends javax.swing.JFrame {
         pnl_agregar.add(btn_minimizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 0, 30, 30));
 
         btn_volver_inicio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/design/userapple.png"))); // NOI18N
+        btn_volver_inicio.setBorder(null);
         btn_volver_inicio.setContentAreaFilled(false);
         btn_volver_inicio.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_volver_inicio.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/design/usertwo.png"))); // NOI18N

@@ -162,7 +162,7 @@ public class registro_cliente extends javax.swing.JFrame {
         pnl_registro.add(btn_salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 0, 30, 30));
 
         box_ubicacion.setEditable(true);
-        box_ubicacion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "UBICACIÓN", "12785411", "12785412", "12785413", "12785414", "12785415" }));
+        box_ubicacion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "UBICACIÓN", "12000000", "12785411", "12785412", "12785413", "12785414", "12785415" }));
         box_ubicacion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(30, 13, 45), 3));
         pnl_registro.add(box_ubicacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 480, 160, 30));
 
