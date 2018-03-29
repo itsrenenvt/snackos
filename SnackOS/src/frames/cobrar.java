@@ -29,6 +29,7 @@ public class cobrar extends javax.swing.JFrame {
         initComponents();
         pnl_efectivo.setVisible(false);
         pnl_tarjetas.setVisible(false);
+        this.estado=estado;
     }
 
     /**
@@ -194,7 +195,7 @@ public class cobrar extends javax.swing.JFrame {
                     .addComponent(txt_total, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txt_recibido, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txt_cambio, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(62, Short.MAX_VALUE))
+                .addContainerGap(72, Short.MAX_VALUE))
             .addGroup(pnl_efectivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(pnl_efectivoLayout.createSequentialGroup()
                     .addComponent(img_efectivo)
@@ -214,7 +215,7 @@ public class cobrar extends javax.swing.JFrame {
                 .addComponent(img_efectivo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        pnl_agregar.add(pnl_efectivo, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 170, 280, 320));
+        pnl_agregar.add(pnl_efectivo, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 290, 320));
 
         pnl_tarjetas.setBackground(new java.awt.Color(83, 53, 74));
         pnl_tarjetas.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -226,6 +227,7 @@ public class cobrar extends javax.swing.JFrame {
         txt_num_tarjeta.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(30, 13, 45), 3));
         pnl_tarjetas.add(txt_num_tarjeta, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 223, 30));
 
+        txt_total_tarjetas.setEditable(false);
         txt_total_tarjetas.setBackground(new java.awt.Color(255, 255, 255));
         txt_total_tarjetas.setFont(new java.awt.Font("Montserrat SemiBold", 0, 12)); // NOI18N
         txt_total_tarjetas.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -267,9 +269,39 @@ public class cobrar extends javax.swing.JFrame {
 
     
     private void btn_listo(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_listo
-       
+
+        try{
+           if(estado==1){
+            realiza_cobro_efectivo();
+           }if(estado==2){
+            realiza_cobro_tarjetas();
+           } 
+        }catch(Exception e){
+            System.out.println(e.toString());
+        }
+        
     }//GEN-LAST:event_btn_listo
 
+    public void realiza_cobro_efectivo(){
+        int total=0;
+        String cap_total="";
+        int cambio=0;
+        String coloca="";
+        int recibio=Integer.parseInt(txt_recibido.getText());
+        
+        
+        cap_total=txt_total.getText().substring(2,4);
+        total=Integer.parseInt(cap_total);
+        
+        cambio=recibio-total;
+        
+        txt_cambio.setText(String.valueOf("$ "+cambio+".00 MXN"));
+             
+    }
+    
+    public void realiza_cobro_tarjetas(){
+        
+    }
     /**Metodo del boton salir, actividades:
      *-Cierra la ventana y termina el proceso de ejcución de la aplicación.
      */
@@ -302,7 +334,7 @@ public class cobrar extends javax.swing.JFrame {
             img_pnls.setVisible(false);
             pnl_efectivo.setVisible(false);
             pnl_tarjetas.setVisible(true);
-            
+            estado=2;
         }catch(Exception e){
             
         }
@@ -315,12 +347,17 @@ public class cobrar extends javax.swing.JFrame {
             img_pnls.setVisible(false);
             pnl_tarjetas.setVisible(false);
             pnl_efectivo.setVisible(true);
+            estado=1;
             
         }catch(Exception e){
             
         }
     }//GEN-LAST:event_btn_efectivo
 
+    public void añade_total(String total){
+        txt_total.setText("$ "+total+".00 MXN");
+        txt_total_tarjetas.setText("$ "+total+".00 MXN");
+    }
        
     
   
