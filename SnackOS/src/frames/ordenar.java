@@ -41,7 +41,7 @@ public class ordenar extends javax.swing.JFrame {
         minutos = calendario.get(Calendar.MINUTE);
         segundos = calendario.get(Calendar.SECOND);
         dia = calendario.get(Calendar.DATE);
-        mes = calendario.get(Calendar.MONTH);
+        mes = calendario.get(Calendar.MONTH)+1;
         annio = calendario.get(Calendar.YEAR);
 
        //palbtnmodificar();
