@@ -156,7 +156,7 @@ public class cobrar extends javax.swing.JFrame {
         pnl_agregar.add(btn_efectivo, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 100, -1, -1));
 
         img_pnls.setIcon(new javax.swing.ImageIcon(getClass().getResource("/design/img_pnls.png"))); // NOI18N
-        pnl_agregar.add(img_pnls, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, 290, 310));
+        pnl_agregar.add(img_pnls, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 290, 320));
 
         pnl_tarjetas.setBackground(new java.awt.Color(83, 53, 74));
 
@@ -187,7 +187,7 @@ public class cobrar extends javax.swing.JFrame {
                 .addComponent(txt_fecha_exp, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(119, 119, 119))
             .addGroup(pnl_tarjetasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(img_tarjetas, javax.swing.GroupLayout.DEFAULT_SIZE, 331, Short.MAX_VALUE))
+                .addComponent(img_tarjetas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pnl_agregar.add(pnl_tarjetas, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 290, 320));
@@ -201,7 +201,6 @@ public class cobrar extends javax.swing.JFrame {
         txt_total.setToolTipText("");
         txt_total.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(30, 13, 45), 3));
 
-        txt_recibido.setBackground(new java.awt.Color(255, 255, 255));
         txt_recibido.setFont(new java.awt.Font("Montserrat SemiBold", 0, 12)); // NOI18N
         txt_recibido.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txt_recibido.setToolTipText("");
