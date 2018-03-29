@@ -7,6 +7,7 @@ package frames;
 import java.awt.HeadlessException;
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.awt.event.KeyEvent;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -175,6 +176,11 @@ public class cobrar extends javax.swing.JFrame {
         txt_recibido.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txt_recibido.setToolTipText("");
         txt_recibido.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(30, 13, 45), 3));
+        txt_recibido.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                foco_cobrar(evt);
+            }
+        });
 
         txt_cambio.setEditable(false);
         txt_cambio.setBackground(new java.awt.Color(255, 255, 255));
@@ -272,30 +278,33 @@ public class cobrar extends javax.swing.JFrame {
 
         try{
            if(estado==1){
-            realiza_cobro_efectivo();
+                 realiza_cobro_efectivo();  
            }if(estado==2){
             realiza_cobro_tarjetas();
            } 
         }catch(Exception e){
             System.out.println(e.toString());
+            msj_comprobacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/design/msj_recibido.png")));
         }
         
     }//GEN-LAST:event_btn_listo
 
+   
     public void realiza_cobro_efectivo(){
         int total=0;
         String cap_total="";
         int cambio=0;
         String coloca="";
         int recibio=Integer.parseInt(txt_recibido.getText());
-        
-        
-        cap_total=txt_total.getText().substring(2,4);
+       
+            cap_total=txt_total.getText().substring(2,4);
         total=Integer.parseInt(cap_total);
         
         cambio=recibio-total;
         
         txt_cambio.setText(String.valueOf("$ "+cambio+".00 MXN"));
+        msj_comprobacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/design/msj_cobro.png")));       
+       
              
     }
     
@@ -353,6 +362,15 @@ public class cobrar extends javax.swing.JFrame {
             
         }
     }//GEN-LAST:event_btn_efectivo
+
+    private void foco_cobrar(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_foco_cobrar
+        // TODO add your handling code here:
+        char TeclaPresionada = evt.getKeyChar();
+        
+        if(TeclaPresionada == KeyEvent.VK_ENTER){
+            btn_listo.doClick();
+            }
+    }//GEN-LAST:event_foco_cobrar
 
     public void añade_total(String total){
         txt_total.setText("$ "+total+".00 MXN");

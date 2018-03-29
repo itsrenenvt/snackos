@@ -98,8 +98,6 @@ public class administrador extends javax.swing.JFrame {
     private void initComponents() {
 
         pnlwallpaper = new javax.swing.JPanel();
-        pnl_acercade_ = new javax.swing.JPanel();
-        lbl_acercade = new javax.swing.JLabel();
         pnl_tabla = new javax.swing.JPanel();
         lbl_frase = new javax.swing.JLabel();
         menu_hamburguesa = new javax.swing.JButton();
@@ -146,6 +144,8 @@ public class administrador extends javax.swing.JFrame {
         lbl_totalusuarios = new javax.swing.JLabel();
         btn_total_usuarios = new javax.swing.JButton();
         txt_total_usuarios = new javax.swing.JTextField();
+        pnl_acercade_ = new javax.swing.JPanel();
+        lbl_acercade = new javax.swing.JLabel();
         btn_salir = new javax.swing.JButton();
         btn_minimizar = new javax.swing.JButton();
         btn_volver_inicio = new javax.swing.JButton();
@@ -167,20 +167,6 @@ public class administrador extends javax.swing.JFrame {
 
         pnlwallpaper.setBackground(new java.awt.Color(83, 53, 74));
         pnlwallpaper.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        pnl_acercade_.setBackground(new java.awt.Color(83, 53, 74));
-        pnl_acercade_.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(30, 13, 45), 5));
-        pnl_acercade_.setFocusCycleRoot(true);
-        pnl_acercade_.setLayout(new java.awt.CardLayout());
-
-        lbl_acercade.setFont(new java.awt.Font("Montserrat", 1, 48)); // NOI18N
-        lbl_acercade.setForeground(new java.awt.Color(255, 255, 255));
-        lbl_acercade.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbl_acercade.setIcon(new javax.swing.ImageIcon(getClass().getResource("/design/pnl_acercade.png"))); // NOI18N
-        lbl_acercade.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        pnl_acercade_.add(lbl_acercade, "card2");
-
-        pnlwallpaper.add(pnl_acercade_, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 30, 930, 460));
 
         pnl_tabla.setBackground(new java.awt.Color(83, 53, 74));
         pnl_tabla.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(30, 13, 45), 5));
@@ -839,6 +825,20 @@ public class administrador extends javax.swing.JFrame {
         );
 
         pnlwallpaper.add(pnl_usuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(-200, 0, -1, 640));
+
+        pnl_acercade_.setBackground(new java.awt.Color(83, 53, 74));
+        pnl_acercade_.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(30, 13, 45), 5));
+        pnl_acercade_.setFocusCycleRoot(true);
+        pnl_acercade_.setLayout(new java.awt.CardLayout());
+
+        lbl_acercade.setFont(new java.awt.Font("Montserrat", 1, 48)); // NOI18N
+        lbl_acercade.setForeground(new java.awt.Color(255, 255, 255));
+        lbl_acercade.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbl_acercade.setIcon(new javax.swing.ImageIcon(getClass().getResource("/design/pnl_acercade.png"))); // NOI18N
+        lbl_acercade.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        pnl_acercade_.add(lbl_acercade, "card2");
+
+        pnlwallpaper.add(pnl_acercade_, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 30, 930, 460));
 
         btn_salir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/design/exitapple.png"))); // NOI18N
         btn_salir.setBorder(null);
