@@ -11,6 +11,8 @@ import java.awt.event.KeyEvent;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -24,6 +26,10 @@ public class cobrar extends javax.swing.JFrame {
      Image icon = Toolkit.getDefaultToolkit().getImage(getClass().getResource("/design/snackOS.png"));
     int estado;
     
+    Calendar calendario = new GregorianCalendar();
+int hora, minutos, segundos;
+    int dia,mes,annio;
+    config_ventana cven= new config_ventana();
     /*Constructor*/
     public cobrar() {
         super("SnackOS");
@@ -31,6 +37,12 @@ public class cobrar extends javax.swing.JFrame {
         pnl_efectivo.setVisible(false);
         pnl_tarjetas.setVisible(false);
         this.estado=estado;
+        hora =calendario.get(Calendar.HOUR_OF_DAY);
+        minutos = calendario.get(Calendar.MINUTE);
+        segundos = calendario.get(Calendar.SECOND);
+        dia = calendario.get(Calendar.DATE);
+        mes = calendario.get(Calendar.MONTH)+1;
+        annio = calendario.get(Calendar.YEAR);
     }
 
     /**
@@ -174,6 +186,7 @@ public class cobrar extends javax.swing.JFrame {
 
         txt_recibido.setFont(new java.awt.Font("Montserrat SemiBold", 0, 12)); // NOI18N
         txt_recibido.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt_recibido.setText("100");
         txt_recibido.setToolTipText("");
         txt_recibido.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(30, 13, 45), 3));
         txt_recibido.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -226,7 +239,6 @@ public class cobrar extends javax.swing.JFrame {
         pnl_tarjetas.setBackground(new java.awt.Color(83, 53, 74));
         pnl_tarjetas.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        txt_num_tarjeta.setBackground(new java.awt.Color(255, 255, 255));
         txt_num_tarjeta.setFont(new java.awt.Font("Montserrat SemiBold", 0, 12)); // NOI18N
         txt_num_tarjeta.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txt_num_tarjeta.setToolTipText("");
@@ -304,7 +316,30 @@ public class cobrar extends javax.swing.JFrame {
         
         txt_cambio.setText(String.valueOf("$ "+cambio+".00 MXN"));
         msj_comprobacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/design/msj_cobro.png")));       
-       
+        String txt_ticket="                  SNACKOS ONLINE COFFE, S.A DE C.V"
+                + "\n                                  COL.ELIMIANA ZAPATA"
+                + "\n                                     TEL. (272) 119 33 47 "
+                + "\n                                         ORIZABA, VER"
+                + "\n                                     RFC: VECJ880326"
+                + "\n               " + dia+"/"+mes+"/"+annio+"                            "+ hora+":"+minutos+":"+segundos
+                + "\n  ------------------------------------------------------------------------------"
+                + "\n                CANT             DESCRIPCIÓN          IMPORTE"
+                + "\n  ------------------------------------------------------------------------------"
+                + "\n                 1          PAGO DE SERVICIOS " +"   $"+cap_total+".00"
+                + "\n  ------------------------------------------------------------------------------"
+                + "\n               TOTAL                                              $"+cap_total+".00"
+                + "\n               EFECTIVO                                       $"+recibio+".00"
+                + "\n               CAMBIO                                           $"+cambio+".00"
+                + "\n"
+                + "\n                           GRACIAS POR SU VISITA"
+                + "\n                               REGRESE PRONTO"
+                + "\n"
+                + "\n                              WWW.SNACKOS.COM"
+                + "\n"
+                + "\n     POR DISPOSICIÓN OFICIAL CUALQUIER DUDA O "
+                + "\n          ACLARACIÓN DEBE SER TRATADA CON EL "
+                + "\n            ADMINISTRADOR DE LA APLICACIÓN.";
+        cven.ticket(txt_ticket);
              
     }
     
@@ -318,6 +353,7 @@ public class cobrar extends javax.swing.JFrame {
         }else
         {
          msj_comprobacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/design/msj_cargo.png"))); 
+         //cven.ticket();
         }
     }
     /**Metodo del boton salir, actividades:

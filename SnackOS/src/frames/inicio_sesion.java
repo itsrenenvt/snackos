@@ -100,6 +100,7 @@ public class inicio_sesion extends javax.swing.JFrame {
 
         txt_usuario.setFont(new java.awt.Font("Montserrat SemiBold", 0, 12)); // NOI18N
         txt_usuario.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt_usuario.setText("SnackOS");
         txt_usuario.setToolTipText("");
         txt_usuario.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(59, 23, 18), 3));
         txt_usuario.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -110,6 +111,7 @@ public class inicio_sesion extends javax.swing.JFrame {
         iniciar_sesion.add(txt_usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 400, 200, 30));
 
         txt_contraseña.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt_contraseña.setText("SnackOS");
         txt_contraseña.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(59, 23, 18), 3));
         txt_contraseña.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
