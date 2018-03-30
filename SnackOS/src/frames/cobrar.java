@@ -329,9 +329,9 @@ int hora, minutos, segundos;
                 + "\n  ------------------------------------------------------------------------------"
                 + "\n                 1          PAGO DE SERVICIOS " +"           $"+cap_total+".00"
                 + "\n  ------------------------------------------------------------------------------"
-                + "\n               TOTAL                                                        $"+cap_total+".00"
-                + "\n               EFECTIVO                                                 $"+recibio+".00"
-                + "\n               CAMBIO                                                     $"+cambio+".00"
+                + "\n               TOTAL                                                      $"+cap_total+".00"
+                + "\n               EFECTIVO                                               $"+recibio+".00"
+                + "\n               CAMBIO                                                   $"+cambio+".00"
                 + "\n"
                 + "\n               ID ORDEN                                         "+id_orden
                 + "\n"
