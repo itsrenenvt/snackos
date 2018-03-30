@@ -25,6 +25,7 @@ public class cobrar extends javax.swing.JFrame {
     administrador t = new administrador();
      Image icon = Toolkit.getDefaultToolkit().getImage(getClass().getResource("/design/snackOS.png"));
     int estado;
+    String id_orden;
     
     Calendar calendario = new GregorianCalendar();
 int hora, minutos, segundos;
@@ -332,6 +333,8 @@ int hora, minutos, segundos;
                 + "\n               EFECTIVO                                                 $"+recibio+".00"
                 + "\n               CAMBIO                                                     $"+cambio+".00"
                 + "\n"
+                + "\n               ID ORDEN                                         "+id_orden
+                + "\n"
                 + "\n                           GRACIAS POR SU VISITA"
                 + "\n                               REGRESE PRONTO"
                 + "\n"
@@ -367,10 +370,12 @@ int hora, minutos, segundos;
                 + "\n  ------------------------------------------------------------------------------"
                 + "\n                 1          PAGO DE SERVICIOS " +"           $"+total+".00"
                 + "\n  ------------------------------------------------------------------------------"
-                + "\n               TOTAL                                                        $"+total+".00"
-                + "\n               CARGO                                                 $"+total+".00"
-                + "\n               TARJETA                               **** ***** **** "+txt_num_tarjeta.getText().substring(12,16)
-                + "\n               VIGENCIA                                                "+box_mes.getSelectedItem()+"/"+box_año.getSelectedItem()
+                + "\n               TOTAL                                                      $"+total+".00"
+                + "\n               CARGO                                                    $"+total+".00"
+                + "\n               TARJETA                            **** ***** **** "+txt_num_tarjeta.getText().substring(12,16)
+                + "\n               VIGENCIA                                              "+box_mes.getSelectedItem()+"/"+box_año.getSelectedItem()
+                + "\n"
+                + "\n               ID ORDEN                                     "+id_orden
                 + "\n"
                 + "\n                           GRACIAS POR SU VISITA"
                 + "\n                               REGRESE PRONTO"
@@ -444,9 +449,10 @@ int hora, minutos, segundos;
             }
     }//GEN-LAST:event_foco_cobrar
 
-    public void añade_total(String total){
+    public void añade_total(String total,String id){
         txt_total.setText("$ "+total+".00 MXN");
         txt_total_tarjetas.setText("$ "+total+".00 MXN");
+        id_orden=id;
     }
        
     

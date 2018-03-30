@@ -338,6 +338,7 @@
                 <StringItem index="6" value="12785415"/>
               </StringArray>
             </Property>
+            <Property name="toolTipText" type="java.lang.String" value="Si no conoce el ID de su ubicaci&#xf3;n, eliga el primero de la lista, posteriormente pase con el administrador para que se le asigne el correspondiente."/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                 <LineBorder thickness="3">

@@ -37,16 +37,17 @@ public class imprime_ticket extends javax.swing.JFrame {
         btn_volver_inicio = new javax.swing.JButton();
         btn_minimizar = new javax.swing.JButton();
         btn_salir = new javax.swing.JButton();
-        jBImprimir = new javax.swing.JButton();
+        btn_imprimir = new javax.swing.JButton();
         img_fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Imprimir el contenido de un JText Area");
-        setMinimumSize(new java.awt.Dimension(400, 400));
+        setMinimumSize(new java.awt.Dimension(328, 100));
         setUndecorated(true);
+        setPreferredSize(new java.awt.Dimension(300, 553));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        pnl_principal.setPreferredSize(new java.awt.Dimension(330, 553));
+        pnl_principal.setMinimumSize(new java.awt.Dimension(330, 630));
+        pnl_principal.setPreferredSize(new java.awt.Dimension(330, 630));
         pnl_principal.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         txt_ticket.setColumns(20);
@@ -54,7 +55,7 @@ public class imprime_ticket extends javax.swing.JFrame {
         txt_ticket.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(30, 13, 45), 3));
         scroll_ticket.setViewportView(txt_ticket);
 
-        pnl_principal.add(scroll_ticket, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 330, 420));
+        pnl_principal.add(scroll_ticket, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 330, 460));
 
         btn_volver_inicio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/design/userapple.png"))); // NOI18N
         btn_volver_inicio.setBorder(null);
@@ -92,16 +93,17 @@ public class imprime_ticket extends javax.swing.JFrame {
         });
         pnl_principal.add(btn_salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 0, 30, 30));
 
-        jBImprimir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/design/btn_imprimir.png"))); // NOI18N
-        jBImprimir.setMnemonic('I');
-        jBImprimir.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(30, 13, 45), 3));
-        jBImprimir.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/design/btn_imprimir_sec.png"))); // NOI18N
-        jBImprimir.addActionListener(new java.awt.event.ActionListener() {
+        btn_imprimir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/design/btn_imprimir.png"))); // NOI18N
+        btn_imprimir.setMnemonic('I');
+        btn_imprimir.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(30, 13, 45), 3));
+        btn_imprimir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_imprimir.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/design/btn_imprimir_sec.png"))); // NOI18N
+        btn_imprimir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBImprimirActionPerformed(evt);
+                btn_imprimirActionPerformed(evt);
             }
         });
-        pnl_principal.add(jBImprimir, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 460, 130, 40));
+        pnl_principal.add(btn_imprimir, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 500, 130, 40));
 
         img_fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/design/pnl_ticket.png"))); // NOI18N
         pnl_principal.add(img_fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 330, -1));
@@ -111,10 +113,10 @@ public class imprime_ticket extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jBImprimirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBImprimirActionPerformed
+    private void btn_imprimirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_imprimirActionPerformed
         PaginationExample pagination = new PaginationExample();
         pagination.imprimirnomina();
-    }//GEN-LAST:event_jBImprimirActionPerformed
+    }//GEN-LAST:event_btn_imprimirActionPerformed
 
     private void btn_salir(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_salir
         // TODO add your handling code here:
@@ -139,6 +141,9 @@ public class imprime_ticket extends javax.swing.JFrame {
         * -Cierra la actual ventana.
         * -Regresa al incicio de sesión
         */
+        config_ventana cv = new config_ventana();
+        cv.iniciar_sesion();
+        this.dispose();
     }//GEN-LAST:event_btn_volver_inicio
 
     
@@ -240,11 +245,11 @@ public class imprime_ticket extends javax.swing.JFrame {
 }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_imprimir;
     private javax.swing.JButton btn_minimizar;
     private javax.swing.JButton btn_salir;
     private javax.swing.JButton btn_volver_inicio;
     private javax.swing.JLabel img_fondo;
-    private javax.swing.JButton jBImprimir;
     private javax.swing.JPanel pnl_principal;
     private javax.swing.JScrollPane scroll_ticket;
     private javax.swing.JTextArea txt_ticket;

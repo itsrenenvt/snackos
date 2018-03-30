@@ -16,7 +16,7 @@ public class atender extends javax.swing.JFrame {
     conexion c = new conexion();
     
     Image icon = Toolkit.getDefaultToolkit().getImage(getClass().getResource("/design/snackOS.png"));
-    String total_cobrar;
+    String total_cobrar,id_orden;
     /**
      * Creates new form atender
      */
@@ -65,7 +65,7 @@ public class atender extends javax.swing.JFrame {
         msj_atendiendo = new javax.swing.JLabel();
         img_fondo = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setUndecorated(true);
 
         pnl_atender.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -405,7 +405,7 @@ public class atender extends javax.swing.JFrame {
         config_ventana c= new config_ventana();
         cobrar cb= new cobrar();
         try{
-            c.cobrarorden(total_cobrar);
+            c.cobrarorden(total_cobrar,id_orden);
         }catch(Exception e){
             
         }
@@ -455,6 +455,7 @@ public class atender extends javax.swing.JFrame {
         txt_app_trabajador.setText(apellidotrabajador);
         box_estado.setSelectedItem(estadoorden);
         total_cobrar=total;
+        id_orden=idorden;
     }
     
     

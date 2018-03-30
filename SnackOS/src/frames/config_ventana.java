@@ -128,13 +128,13 @@ public class config_ventana extends Thread implements Runnable {
      * -Hace que la ventana ce cierre al abrir otra.
      * -Coloca el icono de la aplicación
      */  
-    public void cobrarorden(String total) {
+    public void cobrarorden(String total,String id) {
         /*Variable de tipo clase productos*/
         cobrar a = new cobrar();
         a.setBounds(WidthScreen/3,HeightScreen/15,400,629);
         a.setVisible(true);
         a.setResizable(false);
-        a.añade_total(total);
+        a.añade_total(total,id);
         a.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         a.setIconImage(icon);
     }
@@ -218,7 +218,7 @@ public class config_ventana extends Thread implements Runnable {
     public void registro_trabajador(){
         /*Variable local de tipo clase registro.*/
         registro_trabajador a = new registro_trabajador();
-        a.setBounds(WidthScreen/3,HeightScreen/15,330,643);
+        a.setBounds(WidthScreen/3,HeightScreen/15,400,643);
         a.setVisible(true);
         a.letrero(1);
         a.agregaestado(1);
@@ -230,7 +230,8 @@ public class config_ventana extends Thread implements Runnable {
     
     public void ticket(String txt){
         imprime_ticket t = new imprime_ticket();
-        t.setBounds(WidthScreen/3,HeightScreen/8,330,510);
+        //t.setLocationRelativeTo(null);
+        t.setBounds(WidthScreen/13,HeightScreen/8,330,553);
         t.setVisible(true);
         t.agrega_texto(txt);
         t.setIconImage(icon);
