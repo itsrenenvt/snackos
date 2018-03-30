@@ -303,6 +303,7 @@ public class atender extends javax.swing.JFrame {
         // TODO add your handling code here:
         config_ventana cv = new config_ventana();
         cv.start();
+        this.dispose();
 
     }//GEN-LAST:event_btn_volver_inicio
 

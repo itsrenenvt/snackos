@@ -412,6 +412,9 @@ int hora, minutos, segundos;
      * -Cierra la actual ventana.
      * -Regresa al incicio de sesión
      */            
+      config_ventana cv = new config_ventana();
+        cv.start();
+        this.dispose();
     }//GEN-LAST:event_btn_volver_inicio
 
     private void btn_tarjetas(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tarjetas

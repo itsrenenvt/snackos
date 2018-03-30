@@ -653,7 +653,7 @@ public class trabajador extends javax.swing.JFrame {
                 btn_volver_inicio(evt);
             }
         });
-        pnlwallpaper.add(btn_volver_inicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 0, 30, 30));
+        pnlwallpaper.add(btn_volver_inicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 0, 30, 30));
 
         btn_agregar.setBackground(new java.awt.Color(83, 53, 74));
         btn_agregar.setFont(new java.awt.Font("Montserrat Light", 1, 18)); // NOI18N

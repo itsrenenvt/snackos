@@ -295,6 +295,9 @@ public class productos extends javax.swing.JFrame {
      * -Cierra la actual ventana.
      * -Regresa al incicio de sesión
      */            
+        config_ventana cv = new config_ventana();
+        cv.start();
+        this.dispose();
     }//GEN-LAST:event_btn_volver_inicio
 
     
