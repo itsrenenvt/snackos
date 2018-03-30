@@ -316,20 +316,21 @@ int hora, minutos, segundos;
         
         txt_cambio.setText(String.valueOf("$ "+cambio+".00 MXN"));
         msj_comprobacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/design/msj_cobro.png")));       
-        String txt_ticket="                  SNACKOS ONLINE COFFE, S.A DE C.V"
+        String txt_ticket="\n"+"                  SNACKOS ONLINE COFFE, S.A DE C.V"
                 + "\n                                  COL.ELIMIANA ZAPATA"
                 + "\n                                     TEL. (272) 119 33 47 "
                 + "\n                                         ORIZABA, VER"
                 + "\n                                     RFC: VECJ880326"
-                + "\n               " + dia+"/"+mes+"/"+annio+"                            "+ hora+":"+minutos+":"+segundos
+                + "\n                                   PAGO EN EFECTIVO"
+                + "\n               " + dia+"/"+mes+"/"+annio+"                                            "+ hora+":"+minutos+":"+segundos
                 + "\n  ------------------------------------------------------------------------------"
                 + "\n                CANT             DESCRIPCIÓN          IMPORTE"
                 + "\n  ------------------------------------------------------------------------------"
-                + "\n                 1          PAGO DE SERVICIOS " +"   $"+cap_total+".00"
+                + "\n                 1          PAGO DE SERVICIOS " +"           $"+cap_total+".00"
                 + "\n  ------------------------------------------------------------------------------"
-                + "\n               TOTAL                                              $"+cap_total+".00"
-                + "\n               EFECTIVO                                       $"+recibio+".00"
-                + "\n               CAMBIO                                           $"+cambio+".00"
+                + "\n               TOTAL                                                        $"+cap_total+".00"
+                + "\n               EFECTIVO                                                 $"+recibio+".00"
+                + "\n               CAMBIO                                                     $"+cambio+".00"
                 + "\n"
                 + "\n                           GRACIAS POR SU VISITA"
                 + "\n                               REGRESE PRONTO"
@@ -344,6 +345,7 @@ int hora, minutos, segundos;
     }
     
     public void realiza_cobro_tarjetas(){
+        int total=Integer.parseInt(txt_total_tarjetas.getText().substring(2,4));
         String tarjeta_num=txt_num_tarjeta.getText();
         int mes=box_mes.getSelectedIndex();
         int año=box_año.getSelectedIndex();
@@ -353,7 +355,32 @@ int hora, minutos, segundos;
         }else
         {
          msj_comprobacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/design/msj_cargo.png"))); 
-         //cven.ticket();
+         String txt_ticket="\n"+"                  SNACKOS ONLINE COFFE, S.A DE C.V"
+                + "\n                                  COL.ELIMIANA ZAPATA"
+                + "\n                                     TEL. (272) 119 33 47 "
+                + "\n                                         ORIZABA, VER"
+                + "\n                                     RFC: VECJ880326"
+                + "\n                                   PAGO CON TARJETAS"
+                + "\n               " + dia+"/"+mes+"/"+annio+"                                            "+ hora+":"+minutos+":"+segundos
+                + "\n  ------------------------------------------------------------------------------"
+                + "\n                CANT             DESCRIPCIÓN          IMPORTE"
+                + "\n  ------------------------------------------------------------------------------"
+                + "\n                 1          PAGO DE SERVICIOS " +"           $"+total+".00"
+                + "\n  ------------------------------------------------------------------------------"
+                + "\n               TOTAL                                                        $"+total+".00"
+                + "\n               CARGO                                                 $"+total+".00"
+                + "\n               TARJETA                               **** ***** **** "+txt_num_tarjeta.getText().substring(12,16)
+                + "\n               VIGENCIA                                                "+box_mes.getSelectedItem()+"/"+box_año.getSelectedItem()
+                + "\n"
+                + "\n                           GRACIAS POR SU VISITA"
+                + "\n                               REGRESE PRONTO"
+                + "\n"
+                + "\n                              WWW.SNACKOS.COM"
+                + "\n"
+                + "\n     POR DISPOSICIÓN OFICIAL CUALQUIER DUDA O "
+                + "\n          ACLARACIÓN DEBE SER TRATADA CON EL "
+                + "\n            ADMINISTRADOR DE LA APLICACIÓN.";
+        cven.ticket(txt_ticket);
         }
     }
     /**Metodo del boton salir, actividades:
