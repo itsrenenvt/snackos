@@ -25,7 +25,7 @@ public class cobrar extends javax.swing.JFrame {
     administrador t = new administrador();
      Image icon = Toolkit.getDefaultToolkit().getImage(getClass().getResource("/design/snackOS.png"));
     int estado;
-    String id_orden;
+    String id_orden,nombre;
     
     Calendar calendario = new GregorianCalendar();
 int hora, minutos, segundos;
@@ -327,11 +327,11 @@ int hora, minutos, segundos;
                 + "\n  ------------------------------------------------------------------------------"
                 + "\n                CANT             DESCRIPCIÓN          IMPORTE"
                 + "\n  ------------------------------------------------------------------------------"
-                + "\n                 1          PAGO DE SERVICIOS " +"           $"+cap_total+".00"
+                + "\n                 1                    " +nombre+"                           $"+cap_total+".00"
                 + "\n  ------------------------------------------------------------------------------"
-                + "\n               TOTAL                                                      $"+cap_total+".00"
-                + "\n               EFECTIVO                                               $"+recibio+".00"
-                + "\n               CAMBIO                                                   $"+cambio+".00"
+                + "\n               TOTAL                                                   $"+cap_total+".00"
+                + "\n               EFECTIVO                                            $"+recibio+".00"
+                + "\n               CAMBIO                                                $"+cambio+".00"
                 + "\n"
                 + "\n               ID ORDEN                                         "+id_orden
                 + "\n"
@@ -368,12 +368,12 @@ int hora, minutos, segundos;
                 + "\n  ------------------------------------------------------------------------------"
                 + "\n                CANT             DESCRIPCIÓN          IMPORTE"
                 + "\n  ------------------------------------------------------------------------------"
-                + "\n                 1          PAGO DE SERVICIOS " +"           $"+total+".00"
+                + "\n                 1                    " +nombre+"                          $"+total+".00"
                 + "\n  ------------------------------------------------------------------------------"
-                + "\n               TOTAL                                                      $"+total+".00"
-                + "\n               CARGO                                                    $"+total+".00"
-                + "\n               TARJETA                            **** ***** **** "+txt_num_tarjeta.getText().substring(12,16)
-                + "\n               VIGENCIA                                              "+box_mes.getSelectedItem()+"/"+box_año.getSelectedItem()
+                + "\n               TOTAL                                                   $"+total+".00"
+                + "\n               CARGO                                                 $"+total+".00"
+                + "\n               TARJETA                         **** ***** **** "+txt_num_tarjeta.getText().substring(12,16)
+                + "\n               VIGENCIA                                           "+box_mes.getSelectedItem()+"/"+box_año.getSelectedItem()
                 + "\n"
                 + "\n               ID ORDEN                                     "+id_orden
                 + "\n"
@@ -452,10 +452,11 @@ int hora, minutos, segundos;
             }
     }//GEN-LAST:event_foco_cobrar
 
-    public void añade_total(String total,String id){
+    public void añade_total(String total,String id,String nombre_orden){
         txt_total.setText("$ "+total+".00 MXN");
         txt_total_tarjetas.setText("$ "+total+".00 MXN");
         id_orden=id;
+        nombre=nombre_orden;
     }
        
     

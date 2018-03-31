@@ -16,7 +16,7 @@ public class atender extends javax.swing.JFrame {
     conexion c = new conexion();
     
     Image icon = Toolkit.getDefaultToolkit().getImage(getClass().getResource("/design/snackOS.png"));
-    String total_cobrar,id_orden;
+    String total_cobrar,id_orden,nombre;
     /**
      * Creates new form atender
      */
@@ -406,7 +406,7 @@ public class atender extends javax.swing.JFrame {
         config_ventana c= new config_ventana();
         cobrar cb= new cobrar();
         try{
-            c.cobrarorden(total_cobrar,id_orden);
+            c.cobrarorden(total_cobrar,id_orden,nombre);
         }catch(Exception e){
             
         }
@@ -457,6 +457,7 @@ public class atender extends javax.swing.JFrame {
         box_estado.setSelectedItem(estadoorden);
         total_cobrar=total;
         id_orden=idorden;
+        nombre=nombreorden;
     }
     
     
