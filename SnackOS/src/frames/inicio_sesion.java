@@ -141,8 +141,8 @@ public class inicio_sesion extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
        
-     /**Metodo iniciar_sesion
-      * Este metodo define si el usuario que va ingresar es: 
+     /**Método iniciar_sesion
+      * Este método define si el usuario que va ingresar es: 
       * administrador, empleado o usuario.
       */
     public void iniciar_sesion(){
@@ -201,8 +201,8 @@ public class inicio_sesion extends javax.swing.JFrame {
     }
     
    
-    /**Metodo verifica_contrasela
-    * Este metodo es llamado despues de que se comprueba 
+    /**Método verifica_contraseña
+    * Este método es llamado despueé de que se comprueba 
     * que el usuario ingresado no es:
     * -Administrador
     * Se encarga de deducir si el usuario ingresado es:
@@ -258,7 +258,7 @@ public class inicio_sesion extends javax.swing.JFrame {
     }
     
     /**Método del boton ingreso, actividades:
-     *-Al presionar verifica si el método verifica_campos devolvio un valor true
+     *-Al presionar verifica si el método verifica_campos devolvió un valor true
      *-Si si, desencadena el metodo iniciar_sesión.
      *-Si ocurre un error, imprime en consola el error.*/
     private void btn_ingreso(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ingreso
@@ -300,7 +300,7 @@ public class inicio_sesion extends javax.swing.JFrame {
     }
 
     /**Método del boton para registrarse como usuario, actividades:
-     * -Al preionar, lleva al formulario de registro.
+     * -Al presionar, lleva al formulario de registro.
      * -Cierra la actual ventana.
      */
     private void btn_usuarioregistro(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_usuarioregistro
@@ -317,8 +317,8 @@ public class inicio_sesion extends javax.swing.JFrame {
         this.setExtendedState(ICONIFIED);
     }//GEN-LAST:event_btn_minimizar
 
-    /**Metodo del boton salir, actividades:
-     *-Cierra la ventana y termina el proceso de ejcución de la aplicación.
+    /**Método del botón salir, actividades:
+     *-Cierra la ventana y termina el proceso de ejecución de la aplicación.
      */
     private void btn_salir(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_salir
         // TODO add your handling code here:

@@ -520,7 +520,7 @@ public class cliente extends javax.swing.JFrame {
         txt_busqueda.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(30, 13, 45), 3));
         txt_busqueda.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                txt_busquedabusquedaclic(evt);
+                busquedaclic(evt);
             }
         });
         pnl_principal.add(txt_busqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 110, 590, 30));
@@ -909,14 +909,14 @@ public class cliente extends javax.swing.JFrame {
      *-Sirve como guía para que al presionar la tecla "enter", se ejecute
      * la función del boton busqueda.
      */
-    private void txt_busquedabusquedaclic(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_busquedabusquedaclic
+    private void busquedaclic(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_busquedaclic
         // TODO add your handling code here:
         char TeclaPresionada = evt.getKeyChar();
 
         if(TeclaPresionada == KeyEvent.VK_ENTER){
             btn_busqueda.doClick();
         }
-    }//GEN-LAST:event_txt_busquedabusquedaclic
+    }//GEN-LAST:event_busquedaclic
 
     /**Metodo busqueda, actividades:
      * -Hace una consulta de busqueda, de acuerdo a los parametros ingresados.

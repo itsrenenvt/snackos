@@ -14,8 +14,8 @@ public class conexion {
     private Statement statement;
     private ResultSet resultset;
     
-    /**METODO CONECTAR
-     *Este metodod establece la conexión con el servidor y la basde de datos
+    /**METODO CONECTAR, ACTIVIDADES: 
+     *Este metodo establece la conexión con el servidor y la basde de datos
      */
     public void conectar(){
     /*Variable de local de tipo string inicializada.*/
@@ -42,7 +42,7 @@ public class conexion {
     }
     }
     
-    /**METODO SELECCIONAR
+    /**METODO SELECCIONAR, ACTIVIDADES: 
      *Este metodo nos permite hacer consultas en la base de datos a traves del IDE*/
     public ResultSet select (String sql){
         try{
@@ -56,7 +56,7 @@ public class conexion {
         return resultset;
     }
     
-    /**METODO CERRAR
+    /**METODO CERRAR, ACTIVIDADES: 
      * Permite cerrar una conexion con el servidor y la base de datos.*/
     public void cerrar(){
         try{

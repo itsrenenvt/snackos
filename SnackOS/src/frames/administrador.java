@@ -38,8 +38,8 @@ public class administrador extends javax.swing.JFrame {
     Toolkit Screen = Toolkit.getDefaultToolkit();
     /*Obtiene las dimensiones de la pantalla.*/
     Dimension SizeScreen = Screen.getScreenSize();
-    /*Coloca el iconoo de la app.*/
-    Image icon = Toolkit.getDefaultToolkit().getImage(getClass().getResource("/design/snackOS.png"));
+    /*Coloca el icono de la app.*/
+    Image icon = Toolkit.getDefaultToolkit().getImage(getClass().getResource("/design/icono_snackos.png"));
     /*Obtiene el alto de la pantalla.*/
     int HeightScreen = SizeScreen.height;
     /*Obtiene el ancho de la pantalla.*/
@@ -1378,7 +1378,7 @@ public class administrador extends javax.swing.JFrame {
      *-Hace visible el formulario.
      */
     public void vertuplaingredientes(int i){
-        ingredientes p = new ingredientes();   
+        ingredientes ingr = new ingredientes();   
         int filaseleccionada;
 
      try{
@@ -1402,13 +1402,13 @@ public class administrador extends javax.swing.JFrame {
              String enfriamento=(String)modelotabla.getValueAt(filaseleccionada, 5).toString();
              String existencia=(String)modelotabla.getValueAt(filaseleccionada, 6).toString();
          
-             p.modifica(id,nombre,presentacion,precio,tipo,enfriamento,existencia);
+             ingr.modifica(id,nombre,presentacion,precio,tipo,enfriamento,existencia);
           
         
-        p.setBounds(WidthScreen/3,HeightScreen/15,400,629);
-        p.setVisible(true); 
-        p.letrero(i);
-        p.agregaestado(i);
+        ingr.setBounds(WidthScreen/3,HeightScreen/15,400,629);
+        ingr.setVisible(true); 
+        ingr.letrero(i);
+        ingr.agregaestado(i);
        }
      }catch (HeadlessException ex){
             }
@@ -1476,7 +1476,7 @@ public class administrador extends javax.swing.JFrame {
      *-Hace visible el formulario.
      */
     public void vertupla_cliente(int i){
-        registro_cliente p = new registro_cliente();   
+        registro_cliente cliente = new registro_cliente();   
         int filaseleccionada;
 
      try{
@@ -1502,13 +1502,13 @@ public class administrador extends javax.swing.JFrame {
              String establecimiento=(String)modelotabla.getValueAt(filaseleccionada, 7).toString();
              String email=(String)modelotabla.getValueAt(filaseleccionada, 8).toString();
          
-             p.modifica(id,usuario,contraseña,nombre,ap_paterno,ap_materno,ubicacion,establecimiento,email);
+             cliente.modifica(id,usuario,contraseña,nombre,ap_paterno,ap_materno,ubicacion,establecimiento,email);
           
         
-        p.setBounds(WidthScreen/3,HeightScreen/15,400,629);
-        p.setVisible(true); 
-        p.letrero(i);
-        p.agregaestado(i);
+        cliente.setBounds(WidthScreen/3,HeightScreen/15,400,629);
+        cliente.setVisible(true); 
+        cliente.letrero(i);
+        cliente.agregaestado(i);
        }
      }catch (HeadlessException ex){
             }
@@ -1871,7 +1871,11 @@ public class administrador extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btn_total_usuarios
 
-    /*FALTA AGREGAR DESCRIPCIÓN*/
+    /**Metodod mostrar todas los empleados, actividades:
+     *-Declarara una variable sql de tipo string.
+     *-Envia la consulta al metodo consulta tablas.
+     *
+     */
     private void btn_empleado(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_empleado
         // TODO add your handling code here:
         String sql="select * from trabajador order by \"ID_Trabajador\" asc";

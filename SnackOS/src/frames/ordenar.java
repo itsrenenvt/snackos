@@ -260,9 +260,7 @@ public class ordenar extends javax.swing.JFrame {
      */
     public void modifica(String ID, String name, String tipo, String precio, String recipiente, String presentacion, String descuento, String existencia){
         
-        //txtID.setText(ID);
-        idproducto_orden=ID;
-        //System.out.println("ID_ORDEN_PRODUCTO: " + idproducto);
+        idproducto_orden=ID;//System.out.println("ID_ORDEN_PRODUCTO: " + idproducto);
         txt_nombre.setText(String.valueOf(name));
         txt_categoria.setText(tipo);
         txt_precio.setText(precio);

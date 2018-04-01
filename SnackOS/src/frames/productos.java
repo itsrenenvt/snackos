@@ -308,7 +308,6 @@ public class productos extends javax.swing.JFrame {
      * -Si es igual a 2, actualiza, modifica ingrediente.
      */
    public void accionbotones(){
-       
        c.conectar();
        if(estado == 1){
            System.out.println("AGREGAR");
@@ -379,7 +378,6 @@ public class productos extends javax.swing.JFrame {
            msj_comprobacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/design/ingexistencia.png")));
            return false;
        }
-       //lblmsj.setIcon(new javax.swing.ImageIcon(getClass().getResource("/design/exitosamente.png")));
        return true;
       
    }

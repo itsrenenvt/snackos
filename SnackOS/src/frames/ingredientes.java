@@ -255,7 +255,7 @@ public class ingredientes extends javax.swing.JFrame {
   
     /*Este metodo desencadena el metodo accion botones*/
     private void btn_listo(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_listo
-                  
+               
             try{
                 if(verifica()== true){
                     accionbotones();
@@ -363,7 +363,6 @@ public class ingredientes extends javax.swing.JFrame {
            return false;
        }
        return true;
-      
    }
    
     /**Este metodo reinicia las variables a su estado original despues de 

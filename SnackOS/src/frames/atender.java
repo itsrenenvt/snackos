@@ -13,7 +13,7 @@ import java.util.logging.Logger;
 
 public class atender extends javax.swing.JFrame {
 
-    conexion c = new conexion();
+    conexion basedatos = new conexion();
     
     Image icon = Toolkit.getDefaultToolkit().getImage(getClass().getResource("/design/snackOS.png"));
     String total_cobrar,id_orden,nombre;
@@ -330,8 +330,8 @@ public class atender extends javax.swing.JFrame {
      * llama al metodo reduce existencia.
      */
     public void atenderorden(){
-        c.conectar();
-        c.select("update ordenes "
+        basedatos.conectar();
+        basedatos.select("update ordenes "
                    + "set \"ID_Trabajador\" = '"+box_idempleado.getSelectedItem()+"',"
                    + "    \"Estado\" = '"+box_estado.getSelectedItem()+"'"
                    
@@ -373,7 +373,7 @@ public class atender extends javax.swing.JFrame {
             int existencia = Integer.parseInt(dato.getString(1));
             int idproducto = Integer.parseInt(dato.getString(2));
             int actual=existencia-1;
-            c.select("update productos"
+            this.basedatos.select("update productos"
                      +" set \"Existencia\" = '"+actual+"'"
             + " where \"ID_Producto\" = '"+idproducto+"';");
             msj_estado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/design/ordenentregada.png")));
@@ -400,7 +400,12 @@ public class atender extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btn_listo
 
-    /*FALTA AQUI AGREGAR FUNCIONES*/
+    /**Método del botón cobrar, actividades:
+     * -Instanacia la clase config_ventana.
+     * -Desencadena el metodo cobrarorden.
+     * -Abre el formulario de cobro.
+     * 
+     */
     private void btn_cobrar(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cobrar
         // TODO add your handling code here:
         config_ventana c= new config_ventana();
@@ -430,8 +435,8 @@ public class atender extends javax.swing.JFrame {
      *-Resive, todos los parametros de la clase ordenes.
      *-Coloca los parametros en sus textfield correspondientes.
      */
-    public void atiende(String idorden , String nombreorden , String categoria , String precio , String presentacion,
-                        String descuento,String fecha,String hora,String total,
+    public void atiende(String idorden , String nombreorden , String categoria , String precio , 
+                        String presentacion,String descuento,String fecha,String hora,String total,
                         String idcliente,String usuario,String nombrecliente,String apellidocliente,
                         String edificio,String aula,String transaccion,String idtrabajador,String nombretrabajador,
                         String apellidotrabajador,String estadoorden){

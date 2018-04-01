@@ -14,7 +14,7 @@ import java.util.logging.Logger;
 public class registro_trabajador extends javax.swing.JFrame {
     /**DECLARACIÓN DE VARIABLES GLOBALES*/
  config_ventana op = new config_ventana();
- conexion c= new conexion();
+ conexion basedatos= new conexion();
  int estado;
     
     /*Constructor*/
@@ -238,8 +238,7 @@ public class registro_trabajador extends javax.swing.JFrame {
      * -Si ya existe arroja un mensaje de que este ya se encuentra ocupado.
     */
     public boolean validausuario() throws SQLException{
-       conexion basedatos = new conexion();
-        basedatos.conectar();
+      basedatos.conectar();
         
         String url ="select \"ID_Cliente\" from clientes where upper(\"Usuario\") = upper('" + txt_usuario.getText() +"')";
         
@@ -267,13 +266,13 @@ public class registro_trabajador extends javax.swing.JFrame {
    }
     
     /*BORRAR*/
-    /**Metodo registra cliente, actividades:
+    /**Metodo registra trabajador, actividades:
      * -Agrega en la base de datos, el usuario que lleno el formulario y los
      * datos en el.
     */
-    public void registracliente(){
-         c.conectar();
-          c.select("insert into trabajador "
+    public void registratrabajador(){
+         basedatos.conectar();
+          basedatos.select("insert into trabajador "
               + "values ('"+txt_ID.getText()+"','"
                            +txt_sueldo.getText()+"','"
                            +txt_nombre.getText()+"','"
@@ -315,10 +314,10 @@ public class registro_trabajador extends javax.swing.JFrame {
      */
    public void accionbotones(){
        
-       c.conectar();
+       basedatos.conectar();
        if(estado == 1){
            //System.out.println("AGREGAR");
-       c.select("insert into trabajador "
+       basedatos.select("insert into trabajador "
               + "values ('"+txt_ID.getText()+"','"
                            +txt_sueldo.getText()+"','"
                            +txt_nombre.getText()+"','"
@@ -333,7 +332,7 @@ public class registro_trabajador extends javax.swing.JFrame {
        
        }if(estado == 2){
            System.out.println("MODIFICAR");
-           c.select("update trabajador "
+           basedatos.select("update trabajador "
                    + "set \"Sueldo\" = '"+txt_sueldo.getText()+"',"
                    + "    \"Nombre\" = '"+txt_nombre.getText()+"',"
                    + "    \"Apellido_Paterno\" = '"+txt_paterno.getText()+"',"
@@ -347,7 +346,7 @@ public class registro_trabajador extends javax.swing.JFrame {
            msj_comprobacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/design/modificado.png")));
        }if(estado == 3){
            //System.out.println("DELETE FROM productos WHERE \"ID_Producto\"='2050'");
-           c.select("delete from trabajador"
+           basedatos.select("delete from trabajador"
                   + " where \"ID_Trabajador\" = '"+txt_ID.getText()+"'");
            msj_comprobacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/design/eliminado.png")));
        }
@@ -423,7 +422,6 @@ public class registro_trabajador extends javax.swing.JFrame {
      * -Coloca el resultado en el textfield txt_ID
      */
     public void colocaID() throws SQLException{
-        conexion basedatos = new conexion();
         basedatos.conectar();
         
         String url ="select max(\"ID_Trabajador\") from trabajador";

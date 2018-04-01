@@ -14,7 +14,7 @@ import java.util.logging.Logger;
 public class registro_cliente extends javax.swing.JFrame {
     /**DECLARACIÓN DE VARIABLES GLOBALES*/
  config_ventana op = new config_ventana();
- conexion c= new conexion();
+ conexion basedatos= new conexion();
  int estado;
     
     /*Constructor*/
@@ -111,7 +111,7 @@ public class registro_cliente extends javax.swing.JFrame {
         txt_contraseña.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(30, 13, 45), 3));
         txt_contraseña.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                txt_contraseñaclicpassword(evt);
+                foco_contraseña(evt);
             }
         });
         pnl_registro.add(txt_contraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 360, 160, 30));
@@ -196,7 +196,7 @@ public class registro_cliente extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**Este metodo verifica, que al dar clic en listo, los campos no se 
+    /**Este método verifica, que al dar clic en listo, los campos no se 
      * encuentren vacios, de ser así regresa un valor booleano falso, si no
      * retorna un true.
     */
@@ -245,7 +245,6 @@ public class registro_cliente extends javax.swing.JFrame {
      * -Si ya existe arroja un mensaje de que este ya se encuentra ocupado.
     */
     public boolean validausuario() throws SQLException{
-       conexion basedatos = new conexion();
         basedatos.conectar();
         
         String url ="select \"ID_Cliente\" from clientes where upper(\"Usuario\") = upper('" + txt_usuario.getText() +"')";
@@ -278,8 +277,8 @@ public class registro_cliente extends javax.swing.JFrame {
      * datos en el.
     */
     public void registracliente(){
-         c.conectar();
-          c.select("insert into clientes "
+         basedatos.conectar();
+          basedatos.select("insert into clientes "
               + "values ('"+txt_ID.getText()+"','"
                            +txt_usuario.getText()+"','"
                            +txt_contraseña.getText()+"','"
@@ -311,7 +310,9 @@ public class registro_cliente extends javax.swing.JFrame {
         box_ubicacion.setSelectedIndex(0);
         txt_email.setText("");
    }
-   /*Asigna una imagen de letrero y de cabera al formulario*/
+   /**Asigna una imagen de letrero y de cabera al formulario de acuerdo al indice
+    *recibido por parametro. 
+    */
     public void letrero(int i){
         String ltr = String.valueOf(i);
              img_letrero.setIcon(new javax.swing.ImageIcon(getClass().getResource("/design/letrero_c"+ltr+".png")));
@@ -326,10 +327,10 @@ public class registro_cliente extends javax.swing.JFrame {
      */
    public void accionbotones(){
        
-       c.conectar();
+       basedatos.conectar();
        if(estado == 1){
            System.out.println("AGREGAR");
-       c.select("insert into clientes "
+       basedatos.select("insert into clientes "
               + "values ('"+txt_ID.getText()+"','"
                            +txt_usuario.getText()+"','"
                            +txt_contraseña.getText()+"','"
@@ -344,7 +345,7 @@ public class registro_cliente extends javax.swing.JFrame {
        reset();
        }if(estado == 2){
            System.out.println("MODIFICAR");
-           c.select("update clientes "
+           basedatos.select("update clientes "
                    + "set \"Usuario\" = '"+txt_usuario.getText()+"',"
                    + "    \"Contraseña\" = '"+txt_contraseña.getText()+"',"
                    + "    \"Nombre\" = '"+txt_nombre.getText()+"',"
@@ -357,7 +358,7 @@ public class registro_cliente extends javax.swing.JFrame {
            msj_comprobacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/design/modificado.png")));
        }if(estado == 3){
            //System.out.println("DELETE FROM productos WHERE \"ID_Producto\"='2050'");
-           c.select("delete from clientes"
+           basedatos.select("delete from clientes"
                   + " where \"ID_Cliente\" = '"+txt_ID.getText()+"'");
            msj_comprobacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/design/eliminado.png")));
        }
@@ -380,6 +381,9 @@ public class registro_cliente extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btn_listo
 
+    /**Este método asigna a variables globales, los valores de los parametros
+     * recibidos y los coloca en loc componentes correspondientes.
+     */
     public void modifica(String ID,
                          String usuario,
                          String contraseña,
@@ -405,7 +409,7 @@ public class registro_cliente extends javax.swing.JFrame {
      *-Sirve como guía para que al presionar la tecla "enter", se ejecute
      * la función del boton ingreso.
      */
-    private void txt_contraseñaclicpassword(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_contraseñaclicpassword
+    private void foco_contraseña(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_foco_contraseña
         // TODO add your handling code here:
         char TeclaPresionada = evt.getKeyChar();
 
@@ -413,7 +417,7 @@ public class registro_cliente extends javax.swing.JFrame {
             btn_listo.doClick();
             //btnbusqueda.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/design/busquedablack.png")));
         }
-    }//GEN-LAST:event_txt_contraseñaclicpassword
+    }//GEN-LAST:event_foco_contraseña
 
 
     /**Método del boton volver inicio, actividades:
@@ -450,7 +454,6 @@ public class registro_cliente extends javax.swing.JFrame {
      * -Coloca el resultado en el textfield txt_ID
      */
     public void colocaID() throws SQLException{
-        conexion basedatos = new conexion();
         basedatos.conectar();
         
         String url ="select max(\"ID_Cliente\") from clientes";
@@ -475,6 +478,9 @@ public class registro_cliente extends javax.swing.JFrame {
         }
     }
 
+    /**Este método asigna a la variable global estado, el valor recibido por 
+     * parametro.
+     */
    public void agregaestado(int i){
        estado=i;
    }

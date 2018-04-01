@@ -40,27 +40,6 @@
         <Property name="useNullLayout" type="boolean" value="false"/>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JTextField" name="txt_email">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Montserrat SemiBold" size="12" style="0"/>
-            </Property>
-            <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="toolTipText" type="java.lang.String" value=""/>
-            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                <LineBorder thickness="3">
-                  <Color PropertyName="color" blue="2d" green="d" red="1e" type="rgb"/>
-                </LineBorder>
-              </Border>
-            </Property>
-          </Properties>
-          <Constraints>
-            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="190" y="440" width="160" height="30"/>
-            </Constraint>
-          </Constraints>
-        </Component>
         <Component class="javax.swing.JTextField" name="txt_nombre">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -170,6 +149,53 @@
             </Constraint>
           </Constraints>
         </Component>
+        <Component class="javax.swing.JTextField" name="txt_sueldo">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Montserrat SemiBold" size="12" style="0"/>
+            </Property>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="toolTipText" type="java.lang.String" value=""/>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                <LineBorder thickness="3">
+                  <Color PropertyName="color" blue="2d" green="d" red="1e" type="rgb"/>
+                </LineBorder>
+              </Border>
+            </Property>
+          </Properties>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+              <AbsoluteConstraints x="190" y="360" width="160" height="30"/>
+            </Constraint>
+          </Constraints>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txt_rfc_establecimiento">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Montserrat SemiBold" size="12" style="0"/>
+            </Property>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="text" type="java.lang.String" value="VECJ880326"/>
+            <Property name="toolTipText" type="java.lang.String" value=""/>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                <LineBorder thickness="3">
+                  <Color PropertyName="color" blue="2d" green="d" red="1e" type="rgb"/>
+                </LineBorder>
+              </Border>
+            </Property>
+          </Properties>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+              <AbsoluteConstraints x="190" y="400" width="160" height="30"/>
+            </Constraint>
+          </Constraints>
+        </Component>
         <Component class="javax.swing.JButton" name="btn_listo">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
@@ -193,43 +219,6 @@
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
               <AbsoluteConstraints x="130" y="520" width="130" height="40"/>
-            </Constraint>
-          </Constraints>
-        </Component>
-        <Component class="javax.swing.JPasswordField" name="txt_contrase&#xf1;a">
-          <Properties>
-            <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                <LineBorder thickness="3">
-                  <Color PropertyName="color" blue="2d" green="d" red="1e" type="rgb"/>
-                </LineBorder>
-              </Border>
-            </Property>
-          </Properties>
-          <Events>
-            <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="foco_contrase&#xf1;a"/>
-          </Events>
-          <Constraints>
-            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="190" y="360" width="160" height="30"/>
-            </Constraint>
-          </Constraints>
-        </Component>
-        <Component class="javax.swing.JPasswordField" name="txt_confirma_contrase&#xf1;a">
-          <Properties>
-            <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                <LineBorder thickness="3">
-                  <Color PropertyName="color" blue="2d" green="d" red="1e" type="rgb"/>
-                </LineBorder>
-              </Border>
-            </Property>
-          </Properties>
-          <Constraints>
-            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="190" y="400" width="160" height="30"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -324,21 +313,137 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="javax.swing.JComboBox" name="box_ubicacion">
+        <Component class="javax.swing.JComboBox" name="box_inicio_turno">
           <Properties>
             <Property name="editable" type="boolean" value="true"/>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="7">
-                <StringItem index="0" value="UBICACI&#xd3;N"/>
-                <StringItem index="1" value="12000000"/>
-                <StringItem index="2" value="12785411"/>
-                <StringItem index="3" value="12785412"/>
-                <StringItem index="4" value="12785413"/>
-                <StringItem index="5" value="12785414"/>
-                <StringItem index="6" value="12785415"/>
+              <StringArray count="50">
+                <StringItem index="0" value="INICIO TURNO"/>
+                <StringItem index="1" value="08:00:00"/>
+                <StringItem index="2" value="08:15:00"/>
+                <StringItem index="3" value="08:30:00"/>
+                <StringItem index="4" value="08:45:00"/>
+                <StringItem index="5" value="09:00:00"/>
+                <StringItem index="6" value="09:15:00"/>
+                <StringItem index="7" value="09:30:00"/>
+                <StringItem index="8" value="09:45:00"/>
+                <StringItem index="9" value="10:00:00"/>
+                <StringItem index="10" value="10:15:00"/>
+                <StringItem index="11" value="10:30:00"/>
+                <StringItem index="12" value="10:45:00"/>
+                <StringItem index="13" value="11:00:00"/>
+                <StringItem index="14" value="11:15:00"/>
+                <StringItem index="15" value="11:30:00"/>
+                <StringItem index="16" value="11:45:00"/>
+                <StringItem index="17" value="12:00:00"/>
+                <StringItem index="18" value="12:15:00"/>
+                <StringItem index="19" value="12:30:00"/>
+                <StringItem index="20" value="12:45:00"/>
+                <StringItem index="21" value="13:00:00"/>
+                <StringItem index="22" value="13:15:00"/>
+                <StringItem index="23" value="13:30:00"/>
+                <StringItem index="24" value="13:45:00"/>
+                <StringItem index="25" value="14:00:00"/>
+                <StringItem index="26" value="14:15:00"/>
+                <StringItem index="27" value="14:30:00"/>
+                <StringItem index="28" value="14:45:00"/>
+                <StringItem index="29" value="15:00:00"/>
+                <StringItem index="30" value="15:15:00"/>
+                <StringItem index="31" value="15:30:00"/>
+                <StringItem index="32" value="15:45:00"/>
+                <StringItem index="33" value="16:00:00"/>
+                <StringItem index="34" value="16:15:00"/>
+                <StringItem index="35" value="16:30:00"/>
+                <StringItem index="36" value="16:45:00"/>
+                <StringItem index="37" value="17:00:00"/>
+                <StringItem index="38" value="17:15:00"/>
+                <StringItem index="39" value="17:30:00"/>
+                <StringItem index="40" value="17:45:00"/>
+                <StringItem index="41" value="18:00:00"/>
+                <StringItem index="42" value="18:15:00"/>
+                <StringItem index="43" value="18:30:00"/>
+                <StringItem index="44" value="18:45:00"/>
+                <StringItem index="45" value="19:00:00"/>
+                <StringItem index="46" value="19:15:00"/>
+                <StringItem index="47" value="19:30:00"/>
+                <StringItem index="48" value="19:45:00"/>
+                <StringItem index="49" value="20:00:00"/>
               </StringArray>
             </Property>
-            <Property name="toolTipText" type="java.lang.String" value="Si no conoce el ID de su ubicaci&#xf3;n, eliga el primero de la lista, posteriormente pase con el administrador para que se le asigne el correspondiente."/>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                <LineBorder thickness="3">
+                  <Color PropertyName="color" blue="2d" green="d" red="1e" type="rgb"/>
+                </LineBorder>
+              </Border>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+              <AbsoluteConstraints x="190" y="440" width="160" height="30"/>
+            </Constraint>
+          </Constraints>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="box_fin_turno">
+          <Properties>
+            <Property name="editable" type="boolean" value="true"/>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="50">
+                <StringItem index="0" value="FIN TURNO"/>
+                <StringItem index="1" value="08:00:00"/>
+                <StringItem index="2" value="08:15:00"/>
+                <StringItem index="3" value="08:30:00"/>
+                <StringItem index="4" value="08:45:00"/>
+                <StringItem index="5" value="09:00:00"/>
+                <StringItem index="6" value="09:15:00"/>
+                <StringItem index="7" value="09:30:00"/>
+                <StringItem index="8" value="09:45:00"/>
+                <StringItem index="9" value="10:00:00"/>
+                <StringItem index="10" value="10:15:00"/>
+                <StringItem index="11" value="10:30:00"/>
+                <StringItem index="12" value="10:45:00"/>
+                <StringItem index="13" value="11:00:00"/>
+                <StringItem index="14" value="11:15:00"/>
+                <StringItem index="15" value="11:30:00"/>
+                <StringItem index="16" value="11:45:00"/>
+                <StringItem index="17" value="12:00:00"/>
+                <StringItem index="18" value="12:15:00"/>
+                <StringItem index="19" value="12:30:00"/>
+                <StringItem index="20" value="12:45:00"/>
+                <StringItem index="21" value="13:00:00"/>
+                <StringItem index="22" value="13:15:00"/>
+                <StringItem index="23" value="13:30:00"/>
+                <StringItem index="24" value="13:45:00"/>
+                <StringItem index="25" value="14:00:00"/>
+                <StringItem index="26" value="14:15:00"/>
+                <StringItem index="27" value="14:30:00"/>
+                <StringItem index="28" value="14:45:00"/>
+                <StringItem index="29" value="15:00:00"/>
+                <StringItem index="30" value="15:15:00"/>
+                <StringItem index="31" value="15:30:00"/>
+                <StringItem index="32" value="15:45:00"/>
+                <StringItem index="33" value="16:00:00"/>
+                <StringItem index="34" value="16:15:00"/>
+                <StringItem index="35" value="16:30:00"/>
+                <StringItem index="36" value="16:45:00"/>
+                <StringItem index="37" value="17:00:00"/>
+                <StringItem index="38" value="17:15:00"/>
+                <StringItem index="39" value="17:30:00"/>
+                <StringItem index="40" value="17:45:00"/>
+                <StringItem index="41" value="18:00:00"/>
+                <StringItem index="42" value="18:15:00"/>
+                <StringItem index="43" value="18:30:00"/>
+                <StringItem index="44" value="18:45:00"/>
+                <StringItem index="45" value="19:00:00"/>
+                <StringItem index="46" value="19:15:00"/>
+                <StringItem index="47" value="19:30:00"/>
+                <StringItem index="48" value="19:45:00"/>
+                <StringItem index="49" value="20:00:00"/>
+              </StringArray>
+            </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                 <LineBorder thickness="3">
@@ -353,33 +458,6 @@
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
               <AbsoluteConstraints x="190" y="480" width="160" height="30"/>
-            </Constraint>
-          </Constraints>
-        </Component>
-        <Component class="javax.swing.JLabel" name="msj_inicio_sesion">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Quicksand" size="12" style="1"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
-            </Property>
-            <Property name="horizontalAlignment" type="int" value="0"/>
-          </Properties>
-          <Constraints>
-            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="50" y="590" width="290" height="40"/>
-            </Constraint>
-          </Constraints>
-        </Component>
-        <Component class="javax.swing.JLabel" name="img_titulo">
-          <Properties>
-            <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="verticalAlignment" type="int" value="1"/>
-          </Properties>
-          <Constraints>
-            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="60" y="90" width="280" height="70"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -399,10 +477,21 @@
             </Constraint>
           </Constraints>
         </Component>
+        <Component class="javax.swing.JLabel" name="img_titulo">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="verticalAlignment" type="int" value="1"/>
+          </Properties>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+              <AbsoluteConstraints x="60" y="90" width="280" height="60"/>
+            </Constraint>
+          </Constraints>
+        </Component>
         <Component class="javax.swing.JLabel" name="img_fondo">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/design/form_registro_cliente.png"/>
+              <Image iconType="3" name="/design/form_empleado.png"/>
             </Property>
           </Properties>
           <Constraints>

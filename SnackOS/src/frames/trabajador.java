@@ -855,7 +855,7 @@ public class trabajador extends javax.swing.JFrame {
         String url="SELECT * FROM productos WHERE \"Categoría\" =  'Pizza'";
         consultatablas(url);    }//GEN-LAST:event_btn_pizza
 
-     /*Metodo de menus, actividades:
+     /*Método de menus, actividades:
      *-Hace la consulta para obtener todos los productos de categoría cereales.*/
     private void btn_cereales(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cereales
         estado=1;
@@ -863,7 +863,7 @@ public class trabajador extends javax.swing.JFrame {
         consultatablas(url);
     }//GEN-LAST:event_btn_cereales
 
-     /*Metodo de menus, actividades:
+     /*Método de menus, actividades:
      *-Hace la consulta para obtener todos los productos de categoría ensaladas.*/
     private void btn_ensaladas(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ensaladas
         estado=1;
@@ -876,7 +876,6 @@ public class trabajador extends javax.swing.JFrame {
      *-Realiza la consulta para agregar los datos creados en un formulario.*/
     public void agregar(String url){
         conexion basedatos = new conexion();
-        
         basedatos.conectar();
         basedatos.select(url);
     }

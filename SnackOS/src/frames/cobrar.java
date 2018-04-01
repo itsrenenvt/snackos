@@ -21,7 +21,7 @@ import javax.swing.table.DefaultTableModel;
 /*Inicio de la clase productos*/
 public class cobrar extends javax.swing.JFrame {
     /**DECLARACIÓN DE VARIABLES GLOBALES*/
-    conexion c= new conexion();
+    conexion basedatos= new conexion();
     administrador t = new administrador();
      Image icon = Toolkit.getDefaultToolkit().getImage(getClass().getResource("/design/snackOS.png"));
     int estado;
@@ -286,7 +286,12 @@ int hora, minutos, segundos;
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    
+    /**Método boton listo, actividades:
+     * - Verifica el valor del estado.
+     * -Si es estado es igual a 1, desencadena el metodo realiza_cobro_efectivo.
+     * -Si es igual a 2, desencadena el metodo realiza cobro con tarjetas.
+     * -Atrapa un error.
+     */
     private void btn_listo(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_listo
 
         try{
@@ -303,6 +308,10 @@ int hora, minutos, segundos;
     }//GEN-LAST:event_btn_listo
 
    
+    /**Método realiza cobro con efectivo, actividades:
+     * -Guarda en distintas variables los datos capturados del panel efectivo.
+     * -Manda los datos necesarios a la clase imprime ticket para mostrarlo en pantalla.
+     */
     public void realiza_cobro_efectivo(){
         int total=0;
         String cap_total="";
@@ -347,6 +356,10 @@ int hora, minutos, segundos;
              
     }
     
+    /**Método realiza cobro con tarjetas, actividades:
+     * -Guarda en distintas variables los datos capturados del panel efectivo.
+     * -Manda los datos necesarios a la clase imprime ticket para mostrarlo en pantalla.
+     */
     public void realiza_cobro_tarjetas(){
         int total=Integer.parseInt(txt_total_tarjetas.getText().substring(2,4));
         String tarjeta_num=txt_num_tarjeta.getText();
@@ -388,6 +401,7 @@ int hora, minutos, segundos;
         cven.ticket(txt_ticket);
         }
     }
+    
     /**Metodo del boton salir, actividades:
      *-Cierra la ventana y termina el proceso de ejcución de la aplicación.
      */
@@ -417,6 +431,12 @@ int hora, minutos, segundos;
         this.dispose();
     }//GEN-LAST:event_btn_volver_inicio
 
+    /**Método del boton tarjetas, actividades:
+     * -Oculta la imágen que se muestra al incio del formulario.
+     * -Oculta el panel efectivo.
+     * -Hace visible el panel tarjetas.
+     * -Coloca valor dos al estado.
+     */
     private void btn_tarjetas(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tarjetas
         // TODO add your handling code here:
         try{
@@ -425,11 +445,17 @@ int hora, minutos, segundos;
             pnl_tarjetas.setVisible(true);
             estado=2;
         }catch(Exception e){
-            
+            System.out.println(e.toString());
         }
        
     }//GEN-LAST:event_btn_tarjetas
 
+    /**Método del boton tarjetas, actividades:
+     * -Oculta la imágen que se muestra al incio del formulario.
+     * -Oculta el panel tarjetas.
+     * -Hace visible el panel efectivo.
+     * -Coloca valor dos al estado.
+     */
     private void btn_efectivo(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_efectivo
         // TODO add your handling code here:
         try{
@@ -443,6 +469,10 @@ int hora, minutos, segundos;
         }
     }//GEN-LAST:event_btn_efectivo
 
+    /**Método del foco cobrar, actividades:
+     *-Sirve como guía para que al presionar la tecla "enter", se ejecute
+     * la función del boton ingreso.
+     */
     private void foco_cobrar(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_foco_cobrar
         // TODO add your handling code here:
         char TeclaPresionada = evt.getKeyChar();
@@ -452,6 +482,12 @@ int hora, minutos, segundos;
             }
     }//GEN-LAST:event_foco_cobrar
 
+    /**Método para añadir total, actividades:
+     * -Coloca el valor de la variable total en el componente, txt_total.
+     * -Coloca el valor de la variable total en el componente, txt_total_tarjetas.
+     * -Coloca el valor de la variable id en el componente, id_orden.
+     * -Coloca el valor de la variable nombre_orden en el componente nombre.
+     */
     public void añade_total(String total,String id,String nombre_orden){
         txt_total.setText("$ "+total+".00 MXN");
         txt_total_tarjetas.setText("$ "+total+".00 MXN");
