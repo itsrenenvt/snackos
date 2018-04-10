@@ -36,7 +36,7 @@ public class cliente extends javax.swing.JFrame {
     /*Obtiene las dimensiones de la pantalla.*/
     Dimension SizeScreen = Screen.getScreenSize();
     /*Coloca el iconoo de la app.*/
-    Image icon = Toolkit.getDefaultToolkit().getImage(getClass().getResource("/design/snackOS.png"));
+    Image icon = Toolkit.getDefaultToolkit().getImage(getClass().getResource("/design/icono_snackos.png"));
     /*Obtiene el alto de la pantalla.*/
     int HeightScreen = SizeScreen.height;
     /*Obtiene el ancho de la pantalla.*/
@@ -1123,7 +1123,8 @@ public class cliente extends javax.swing.JFrame {
         p.letrero(i);
         p.idcliente(txt_usuario.getText());
         p.agregaestado(i);
-        p.generarID();  
+        p.generarID();
+        p.setIconImage(icon);
         
        }
      }catch (HeadlessException ex){
