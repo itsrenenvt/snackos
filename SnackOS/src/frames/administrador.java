@@ -1049,7 +1049,7 @@ public class administrador extends javax.swing.JFrame {
      *-Hace la consulta para obtener todos los productos de categoría cáfe.*/
     private void btn_cafes(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cafes
         // TODO add your handling code here:
-        String url="SELECT * FROM productos WHERE \"Categoría\" =  'Café'";
+        String url="SELECT * FROM productos WHERE \"Categoría\" =  'Café' ORDER BY \"ID_Producto\"";
         consultatablas(url);
         estado=1;
     }//GEN-LAST:event_btn_cafes
@@ -1058,7 +1058,7 @@ public class administrador extends javax.swing.JFrame {
      *-Hace la consulta para obtener todos los productos de categoría postres.*/
     private void btn_postres(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_postres
         estado=1;
-        String url="SELECT * FROM productos WHERE \"Categoría\" =  'Postre'";
+        String url="SELECT * FROM productos WHERE \"Categoría\" =  'Postre' ORDER BY \"ID_Producto\"";
         
         consultatablas(url);    }//GEN-LAST:event_btn_postres
 
@@ -1066,7 +1066,7 @@ public class administrador extends javax.swing.JFrame {
      *-Hace la consulta para obtener todos los productos de categoría sandwich.*/
     private void btn_sandwich(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_sandwich
         estado=1;
-        String url="SELECT * FROM productos WHERE \"Categoría\" =  'Sandwich'";
+        String url="SELECT * FROM productos WHERE \"Categoría\" =  'Sandwich' ORDER BY \"ID_Producto\"";
         consultatablas(url);    }//GEN-LAST:event_btn_sandwich
 
      /*Metodo de menus, actividades:
@@ -1080,7 +1080,7 @@ public class administrador extends javax.swing.JFrame {
      *-Hace la consulta para obtener todos los productos de categoría cereales.*/
     private void btn_cereales(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cereales
         estado=1;
-        String url="SELECT * FROM productos WHERE \"Categoría\" =  'Cereales'";
+        String url="SELECT * FROM productos WHERE \"Categoría\" =  'Cereales' ORDER BY \"ID_Producto\"";
         consultatablas(url);
     }//GEN-LAST:event_btn_cereales
 
@@ -1088,7 +1088,7 @@ public class administrador extends javax.swing.JFrame {
      *-Hace la consulta para obtener todos los productos de categoría ensaladas.*/
     private void btn_ensaladas(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ensaladas
         estado=1;
-        String url="SELECT * FROM productos WHERE \"Categoría\" =  'Ensalada'";
+        String url="SELECT * FROM productos WHERE \"Categoría\" =  'Ensalada' ORDER BY \"ID_Producto\"";
         consultatablas(url);
     }//GEN-LAST:event_btn_ensaladas
      
@@ -1196,7 +1196,7 @@ public class administrador extends javax.swing.JFrame {
      *-Hace la consulta para obtener todos los productos de categoría jugos.*/
     private void btnJugos(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnJugos
 
-        String url="SELECT * FROM productos WHERE \"Categoría\" =  'Jugo'";
+        String url="SELECT * FROM productos WHERE \"Categoría\" =  'Jugo' ORDER BY \"ID_Producto\"";
         consultatablas(url);
         estado=1;
     }//GEN-LAST:event_btnJugos
@@ -1204,7 +1204,7 @@ public class administrador extends javax.swing.JFrame {
     /*Metodo de menus, actividades:
      *-Hace la consulta para obtener todos los productos de categoría desayunos.*/
     private void btn_desayunos(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_desayunos
-        String url="SELECT * FROM productos WHERE \"Categoría\" =  'Desayuno'";
+        String url="SELECT * FROM productos WHERE \"Categoría\" =  'Desayuno' ORDER BY \"ID_Producto\"";
         consultatablas(url);
         estado=1;
     }//GEN-LAST:event_btn_desayunos
@@ -1213,7 +1213,7 @@ public class administrador extends javax.swing.JFrame {
      *-Hace la consulta para obtener todos los productos de categoría hamburguesas.*/
     private void btn_hamburguesas(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_hamburguesas
         estado=1;
-        String url="SELECT * FROM productos WHERE \"Categoría\" =  'Hamburguesa'";
+        String url="SELECT * FROM productos WHERE \"Categoría\" =  'Hamburguesa' ORDER BY \"ID_Producto\"";
         consultatablas(url);    }//GEN-LAST:event_btn_hamburguesas
 
     /**Metodo para agregar, actividades:

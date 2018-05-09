@@ -12,10 +12,11 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class atender extends javax.swing.JFrame {
-
+    /*Declara conexion con la base de datos*/
     conexion basedatos = new conexion();
-    
+    /*Coloca el icono de la app.*/
     Image icon = Toolkit.getDefaultToolkit().getImage(getClass().getResource("/design/snackOS.png"));
+    /*Declaración de variables String*/
     String total_cobrar,id_orden,nombre;
     /**
      * Creates new form atender

@@ -18,14 +18,23 @@ import javax.swing.table.DefaultTableModel;
 /*Inicio de la clase ordenar*/
 public class ordenar extends javax.swing.JFrame {
     /**DECLARACIÓN DE VARIABLES GLOBALES*/
+    /*Declara conexion con la base de datos*/
     conexion c= new conexion();
+    /*Variable de tipo clase administrador*/
     administrador t = new administrador();
+    /*Declara objeto calendario*/
     Calendar calendario = new GregorianCalendar();
+    /*Declara enteros para hora, minutos, segundos.*/
     int hora, minutos, segundos;
+    /*Declara enteros para dia , mes ,año*/
     int dia,mes,annio;
+    /*Declara entero para estado*/
     int estado;
+    /*Declara entero para transacción*/
     int transaccion;
+    /*Declara String para el id del producto*/
     String idproducto_orden;
+    /*Declara String para el id del cliente*/
     String idcliente;
     
     /*Constructor*/

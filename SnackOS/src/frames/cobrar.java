@@ -22,13 +22,19 @@ import javax.swing.table.DefaultTableModel;
 public class cobrar extends javax.swing.JFrame {
     /**DECLARACIÓN DE VARIABLES GLOBALES*/
     conexion basedatos= new conexion();
+/*Declaración de objeto*/
     administrador t = new administrador();
+    /*Coloca el icono de la app.*/
      Image icon = Toolkit.getDefaultToolkit().getImage(getClass().getResource("/design/snackOS.png"));
+     /*Declara un entero*/
     int estado;
+    /*Declara un string*/
     String id_orden,nombre;
-    
+    /*Declara objeto calendario*/
     Calendar calendario = new GregorianCalendar();
+    /*Declara enteros para hora, minutos, segundos.*/
 int hora, minutos, segundos;
+/*Declara enteros para dia , mes ,año*/
     int dia,mes,annio;
     config_ventana cven= new config_ventana();
     /*Constructor*/

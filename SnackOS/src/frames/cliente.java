@@ -1054,11 +1054,15 @@ public class cliente extends javax.swing.JFrame {
             
             modelo.setColumnIdentifiers(etiquetas);
             table = new JTable(modelo);
+            
             while(resultset.next()){
                 Object [] fila = new Object[numeroColumnas];
                 for(int i=0;i<numeroColumnas;i++){
                     fila[i]=resultset.getObject(i+1);
                     table.getColumnModel().getColumn(i).setCellRenderer(alinear);
+                   /* if(fila[i]==""){
+                        JOptionPane.showMessageDialog(null, "NO HAY DATOS");
+                    }*/
                     if(numeroColumnas > 15){
                         table.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
                         table.doLayout();
