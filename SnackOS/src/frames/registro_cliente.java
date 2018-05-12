@@ -352,7 +352,7 @@ public class registro_cliente extends javax.swing.JFrame {
                    + "    \"Apellido_Paterno\" = '"+txt_paterno.getText()+"',"
                    + "    \"Apellido_Materno\" = '"+txt_materno.getText()+"',"
                    + "    \"ID_Ubicacion\" = '"+box_ubicacion.getSelectedItem()+"',"
-                   + "    \"E-mail\" = '"+txt_usuario.getText()+"'"
+                   + "    \"E-mail\" = '"+txt_email.getText()+"'"
                            
                    + " where \"ID_Cliente\" = '"+txt_ID.getText()+"';");
            msj_comprobacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/design/modificado.png")));
@@ -364,7 +364,15 @@ public class registro_cliente extends javax.swing.JFrame {
        }
    }
    
-    /*Este metodo desencadena el metodo accion botones*/
+    /**Método del boton listo, actividades:
+     * -Verifica el estado.
+     * -Si el estado es igual a 20, quiere decir que el usuario es quien se 
+     * registra personalmente.
+     * -Si no, es el administrador quien lo registra.
+     * -Verifica si el estado es igual a 1(agregar), corrabora en la base de datos
+     * que el usuario no exista.
+     * -Si el estado es diferente de 1, entonces modifica o eliminara.
+     */
     private void btn_listo(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_listo
 
         try{
@@ -373,7 +381,16 @@ public class registro_cliente extends javax.swing.JFrame {
                     registracliente();
             }
             }else{
-                accionbotones();
+                if(estado==1){
+                    if(verifica()== true && validausuario() == true){
+                        accionbotones();
+                    }
+                }else{
+                    if(verifica()== true){
+                        accionbotones();
+                    }
+                }
+                
             }
         }catch (Exception e){
             System.out.println(e.toString());
