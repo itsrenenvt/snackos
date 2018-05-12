@@ -4,11 +4,15 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/BRNvt/Desktop/SnackOS/SnackOS/src/frames/cliente.java</file>
+            <file>file:/C:/Users/BRNvt/Desktop/SnackOS/SnackOS/src/frames/registro_trabajador.java</file>
             <file>file:/C:/Users/BRNvt/Desktop/SnackOS/SnackOS/src/frames/administrador.java</file>
+            <file>file:/C:/Users/BRNvt/Desktop/SnackOS/SnackOS/src/frames/productos.java</file>
+            <file>file:/C:/Users/BRNvt/Desktop/SnackOS/SnackOS/src/frames/registro_cliente.java</file>
             <file>file:/C:/Users/BRNvt/Desktop/SnackOS/SnackOS/src/frames/imprime_ticket.java</file>
             <file>file:/C:/Users/BRNvt/Desktop/SnackOS/SnackOS/src/frames/ingredientes.java</file>
             <file>file:/C:/Users/BRNvt/Desktop/SnackOS/SnackOS/src/frames/cobrar.java</file>
             <file>file:/C:/Users/BRNvt/Desktop/SnackOS/SnackOS/src/frames/ordenar.java</file>
+            <file>file:/C:/Users/BRNvt/Desktop/SnackOS/SnackOS/src/frames/trabajador.java</file>
             <file>file:/C:/Users/BRNvt/Desktop/SnackOS/SnackOS/src/frames/atender.java</file>
         </group>
     </open-files>

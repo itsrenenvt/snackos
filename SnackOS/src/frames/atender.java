@@ -17,7 +17,9 @@ public class atender extends javax.swing.JFrame {
     /*Coloca el icono de la app.*/
     Image icon = Toolkit.getDefaultToolkit().getImage(getClass().getResource("/design/snackOS.png"));
     /*Declaración de variables String*/
-    String total_cobrar,id_orden,nombre;
+    String total_cobrar,id_orden,nombre,sub_descuento,p_precio;
+    /*Variable global que guarda el subtotal de la compra*/
+    int subtotal;
     /**
      * Creates new form atender
      */
@@ -334,6 +336,7 @@ public class atender extends javax.swing.JFrame {
         basedatos.conectar();
         basedatos.select("update ordenes "
                    + "set \"ID_Trabajador\" = '"+box_idempleado.getSelectedItem()+"',"
+                   + "\"Total\" = '"+subtotal+"',"
                    + "    \"Estado\" = '"+box_estado.getSelectedItem()+"'"
                    
                    + " where \"ID_Orden\" = '"+txt_idorden.getText()+"';");
@@ -412,7 +415,7 @@ public class atender extends javax.swing.JFrame {
         config_ventana c= new config_ventana();
         cobrar cb= new cobrar();
         try{
-            c.cobrarorden(total_cobrar,id_orden,nombre);
+            c.cobrarorden(total_cobrar,id_orden,nombre,sub_descuento,p_precio);
         }catch(Exception e){
             
         }
@@ -449,7 +452,7 @@ public class atender extends javax.swing.JFrame {
         txt_descuento.setText("$ "+descuento+".00 MXN");
         txt_fecha.setText(fecha);
         txt_hora.setText(hora);
-        txt_total.setText("$ "+total+".00 MXN");
+        //txt_total.setText("$ "+total+".00 MXN");
         txt_idcliente.setText(idcliente);
         txt_usuario.setText(usuario);
         txt_nombre_cliente.setText(nombrecliente);
@@ -461,9 +464,23 @@ public class atender extends javax.swing.JFrame {
         txt_nombretrabajador.setText(nombretrabajador);
         txt_app_trabajador.setText(apellidotrabajador);
         box_estado.setSelectedItem(estadoorden);
-        total_cobrar=total;
+        //total_cobrar=total;
         id_orden=idorden;
         nombre=nombreorden;
+        sub_descuento=descuento;
+        p_precio=precio;
+        
+        int pp = Integer.parseInt(precio);
+        int dd = Integer.parseInt(descuento);
+        subtotal = pp-dd;
+        if(subtotal < 10){
+            txt_total.setText("$ 0"+subtotal+".00 MXN");
+            total_cobrar=String.valueOf("0"+subtotal);
+        }else{
+            txt_total.setText("$ "+subtotal+".00 MXN");
+        }
+        
+  
     }
     
     

@@ -133,13 +133,13 @@ public class config_ventana extends Thread implements Runnable {
      * -Hace que la ventana ce cierre al abrir otra.
      * -Coloca el icono de la aplicación
      */  
-    public void cobrarorden(String total,String id,String nombre) {
+    public void cobrarorden(String total,String id,String nombre,String desc, String precio) {
         /*Variable de tipo clase productos*/
         cobrar obj_cobrar = new cobrar();
         obj_cobrar.setBounds(WidthScreen/3,HeightScreen/15,400,629);
         obj_cobrar.setVisible(true);
         obj_cobrar.setResizable(false);
-        obj_cobrar.añade_total(total,id,nombre);
+        obj_cobrar.añade_total(total,id,nombre,desc,precio);
         obj_cobrar.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         obj_cobrar.setIconImage(icon);
     }

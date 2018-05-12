@@ -29,7 +29,7 @@ public class cobrar extends javax.swing.JFrame {
      /*Declara un entero*/
     int estado;
     /*Declara un string*/
-    String id_orden,nombre;
+    String id_orden,nombre,desc_,prec_;
     /*Declara objeto calendario*/
     Calendar calendario = new GregorianCalendar();
     /*Declara enteros para hora, minutos, segundos.*/
@@ -342,8 +342,10 @@ int hora, minutos, segundos;
                 + "\n  ------------------------------------------------------------------------------"
                 + "\n                CANT             DESCRIPCIÓN          IMPORTE"
                 + "\n  ------------------------------------------------------------------------------"
-                + "\n                 1                    " +nombre+"                           $"+cap_total+".00"
+                + "\n                 1                    " +nombre+"                      $"+cap_total+".00"
                 + "\n  ------------------------------------------------------------------------------"
+                + "\n               PRECIO                                           $"+prec_+".00"
+                + "\n               DESCUENTO                                      $"+desc_+".00"
                 + "\n               TOTAL                                                   $"+cap_total+".00"
                 + "\n               EFECTIVO                                            $"+recibio+".00"
                 + "\n               CAMBIO                                                $"+cambio+".00"
@@ -389,6 +391,8 @@ int hora, minutos, segundos;
                 + "\n  ------------------------------------------------------------------------------"
                 + "\n                 1                    " +nombre+"                          $"+total+".00"
                 + "\n  ------------------------------------------------------------------------------"
+                + "\n               PRECIO                                          $"+prec_+".00"
+                + "\n               DESCUENTO                                      $"+desc_+".00"
                 + "\n               TOTAL                                                   $"+total+".00"
                 + "\n               CARGO                                                 $"+total+".00"
                 + "\n               TARJETA                         **** ***** **** "+txt_num_tarjeta.getText().substring(12,16)
@@ -494,11 +498,13 @@ int hora, minutos, segundos;
      * -Coloca el valor de la variable id en el componente, id_orden.
      * -Coloca el valor de la variable nombre_orden en el componente nombre.
      */
-    public void añade_total(String total,String id,String nombre_orden){
+    public void añade_total(String total,String id,String nombre_orden,String desc,String prec){
         txt_total.setText("$ "+total+".00 MXN");
         txt_total_tarjetas.setText("$ "+total+".00 MXN");
         id_orden=id;
         nombre=nombre_orden;
+        desc_=desc;
+        prec_=prec;
     }
        
     

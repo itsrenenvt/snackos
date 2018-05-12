@@ -835,7 +835,7 @@ public class cliente extends javax.swing.JFrame {
      *-Hace la consulta para obtener todos los productos de categoría cáfe.*/
     private void btn_cafe(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cafe
         // TODO add your handling code here:
-        String url="SELECT * FROM productos WHERE \"Categoría\" =  'Café'";
+        String url="SELECT * FROM productos WHERE \"Categoría\" =  'Café' ORDER BY \"ID_Producto\"";
         consultatablas(url);
         estado=1;
     }//GEN-LAST:event_btn_cafe
@@ -844,7 +844,7 @@ public class cliente extends javax.swing.JFrame {
      *-Hace la consulta para obtener todos los productos de categoría jugos.*/
     private void btn_Jugos(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_Jugos
 
-        String url="SELECT * FROM productos WHERE \"Categoría\" =  'Jugo'";
+        String url="SELECT * FROM productos WHERE \"Categoría\" =  'Jugo' ORDER BY \"ID_Producto\"";
         consultatablas(url);
         estado=1;
     }//GEN-LAST:event_btn_Jugos
@@ -853,14 +853,14 @@ public class cliente extends javax.swing.JFrame {
      *-Hace la consulta para obtener todos los productos de categoría postres.*/
     private void btn_postres(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_postres
         estado=1;
-        String url="SELECT * FROM productos WHERE \"Categoría\" =  'Postre'";
+        String url="SELECT * FROM productos WHERE \"Categoría\" =  'Postre' ORDER BY \"ID_Producto\"";
         consultatablas(url);
     }//GEN-LAST:event_btn_postres
 
     /*Metodo de menus, actividades:
      *-Hace la consulta para obtener todos los productos de categoría desayunos.*/
     private void btn_desayunos(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_desayunos
-        String url="SELECT * FROM productos WHERE \"Categoría\" =  'Desayuno'";
+        String url="SELECT * FROM productos WHERE \"Categoría\" =  'Desayuno' ORDER BY \"ID_Producto\"";
         consultatablas(url);
         estado=1;
     }//GEN-LAST:event_btn_desayunos
@@ -869,7 +869,7 @@ public class cliente extends javax.swing.JFrame {
      *-Hace la consulta para obtener todos los productos de categoría sandwich.*/
     private void btn_sandwich(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_sandwich
         estado=1;
-        String url="SELECT * FROM productos WHERE \"Categoría\" =  'Sandwich'";
+        String url="SELECT * FROM productos WHERE \"Categoría\" =  'Sandwich' ORDER BY \"ID_Producto\"";
         consultatablas(url);
     }//GEN-LAST:event_btn_sandwich
 
@@ -877,7 +877,7 @@ public class cliente extends javax.swing.JFrame {
      *-Hace la consulta para obtener todos los productos de categoría pizza.*/
     private void btn_pizza(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_pizza
         estado=1;
-        String url="SELECT * FROM productos WHERE \"Categoría\" =  'Pizza'";
+        String url="SELECT * FROM productos WHERE \"Categoría\" =  'Pizza' ORDER BY \"ID_Producto\"";
         consultatablas(url);
     }//GEN-LAST:event_btn_pizza
 
@@ -885,7 +885,7 @@ public class cliente extends javax.swing.JFrame {
      *-Hace la consulta para obtener todos los productos de categoría cereales.*/
     private void btn_cereales(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cereales
         estado=1;
-        String url="SELECT * FROM productos WHERE \"Categoría\" =  'Cereales'";
+        String url="SELECT * FROM productos WHERE \"Categoría\" =  'Cereales' ORDER BY \"ID_Producto\"";
         consultatablas(url);
     }//GEN-LAST:event_btn_cereales
 
@@ -893,7 +893,7 @@ public class cliente extends javax.swing.JFrame {
      *-Hace la consulta para obtener todos los productos de categoría ensaladas.*/
     private void btn_ensalada(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ensalada
         estado=1;
-        String url="SELECT * FROM productos WHERE \"Categoría\" =  'Ensalada'";
+        String url="SELECT * FROM productos WHERE \"Categoría\" =  'Ensalada' ORDER BY \"ID_Producto\"";
         consultatablas(url);
     }//GEN-LAST:event_btn_ensalada
 
@@ -901,7 +901,7 @@ public class cliente extends javax.swing.JFrame {
      *-Hace la consulta para obtener todos los productos de categoría hamburguesas.*/
     private void btn_hamburguesa(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_hamburguesa
         estado=1;
-        String url="SELECT * FROM productos WHERE \"Categoría\" =  'Hamburguesa'";
+        String url="SELECT * FROM productos WHERE \"Categoría\" =  'Hamburguesa' ORDER BY \"ID_Producto\"";
         consultatablas(url);
     }//GEN-LAST:event_btn_hamburguesa
 

@@ -1608,6 +1608,8 @@ public class administrador extends javax.swing.JFrame {
 
     /**Metodo busqueda, actividades:
      * -Captura el número del indice del combobox.
+     * Si es 1, busca producto.
+     * Si es 2, busca ingrediente.
      * -Hace una consulta de busqueda, de acuerdo al indice obtenido.
      */
     private void btn_busqueda(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_busqueda
