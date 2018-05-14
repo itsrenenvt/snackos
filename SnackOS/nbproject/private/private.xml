@@ -5,6 +5,10 @@
         <group>
             <file>file:/C:/Users/BRNvt/Desktop/SnackOS/SnackOS/src/frames/administrador.java</file>
             <file>file:/C:/Users/BRNvt/Desktop/SnackOS/SnackOS/src/frames/registro_cliente.java</file>
+            <file>file:/C:/Users/BRNvt/Desktop/SnackOS/SnackOS/src/frames/config_ventana.java</file>
+            <file>file:/C:/Users/BRNvt/Desktop/SnackOS/SnackOS/src/frames/imprime_ticket.java</file>
+            <file>file:/C:/Users/BRNvt/Desktop/SnackOS/SnackOS/src/frames/cobrar.java</file>
+            <file>file:/C:/Users/BRNvt/Desktop/SnackOS/SnackOS/src/frames/atender.java</file>
         </group>
     </open-files>
 </project-private>

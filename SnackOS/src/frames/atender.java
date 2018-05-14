@@ -478,6 +478,7 @@ public class atender extends javax.swing.JFrame {
             total_cobrar=String.valueOf("0"+subtotal);
         }else{
             txt_total.setText("$ "+subtotal+".00 MXN");
+            total_cobrar=String.valueOf(subtotal);
         }
         
   
